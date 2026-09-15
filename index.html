@@ -49,4 +49,126 @@
             </div>
         </section>
 
-        
+        <!-- Section 2: Rekapitulasi Proyek / Matakuliah (Tabel Semantik) -->
+        <section id="portofolio" class="card-section">
+            <h2>Rekapitulasi Proyek & Mata Kuliah</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <caption>Daftar Proyek Akademik dan Status Penyelesaian</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Proyek / Kode MK</th>
+                            <th scope="col">Peran / Kategori</th>
+                            <th scope="col">Teknologi</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Desain UI/UX / 10231</td>
+                            <td>Desainer</td>
+                            <td>Figma</td>
+                            <td><span class="badge badge-success">Selesai</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Perancangan Sistem Informasi UMKM</td>
+                            <td>Analisis Dan Perancangan Sistem</td>
+                            <td>Figma, CSS Grid</td>
+                            <td><span class="badge badge-warning">Proses</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Sistem Informasi Kampus</td>
+                            <td>Fullstack Developer</td>
+                            <td>HTML, CSS, JS</td>
+                            <td><span class="badge badge-success">Selesai</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total Proyek Terdaftar</td>
+                            <td>3 Proyek</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: Formulir Pemesanan Layanan / Kontak -->
+        <section id="layanan" class="card-section">
+            <h2>Formulir Pemesanan Layanan Konsultasi</h2>
+            <form class="custom-form" action="#" method="POST">
+                
+                <!-- Fieldset 1: Data Identitas (Input: text, email, tel, number) -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Data Identitas Klien</legend>
+                    
+                    <div class="form-group">
+                        <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
+                        <input type="text" id="nama" name="nama" class="form-control" required placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Kampus / Resmi <span class="req">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="nama@domain.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon" class="form-label">No. Telepon / WhatsApp <span class="req">*</span></label>
+                        <input type="tel" id="telepon" name="telepon" class="form-control" required placeholder="081234567890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="anggaran" class="form-label">Estimasi Anggaran (dalam Juta Rp) <span class="req">*</span></label>
+                        <input type="number" id="anggaran" name="anggaran" class="form-control" min="1" max="100" required placeholder="Contoh: 5">
+                    </div>
+                </fieldset>
+
+                <!-- Fieldset 2: Detail Permintaan (Input: select, radio, checkbox, textarea) -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Detail Permintaan Proyek</legend>
+                    
+                    <div class="form-group">
+                        <label for="kategori-layanan" class="form-label">Kategori Layanan</label>
+                        <select id="kategori-layanan" name="kategori-layanan" class="form-control">
+                            <option value="frontend">Frontend Web Development</option>
+                            <option value="uiux">Desain UI/UX Prototyping</option>
+                            <option value="audit">Audit Aksesibilitas (WCAG)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Tingkat Prioritas Proyek:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="prioritas-normal" name="prioritas" value="normal" checked>
+                            <label for="prioritas-normal">Normal</label>
+                            
+                            <input type="radio" id="prioritas-tinggi" name="prioritas" value="tinggi">
+                            <label for="prioritas-tinggi">Tinggi (Urgent)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Fitur Tambahan yang Dibutuhkan:</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="fitur-responsive" name="fitur[]" value="responsive" checked>
+                            <label for="fitur-responsive">Desain Mobile Responsif</label>
+                            
+                            <input type="checkbox" id="fitur-seo" name="fitur[]" value="seo">
+                            <label for="fitur-seo">Optimasi SEO Semantik</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesan" class="form-label">Deskripsi Permintaan <span class="req">*</span></label>
+                        <textarea id="pesan" name="pesan" class="form-control" rows="4" required placeholder="Jelaskan detail proyek Anda di sini..."></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">Kirim Pemesanan Layanan</button>
+            </form>
+        </section>
+    </main>
