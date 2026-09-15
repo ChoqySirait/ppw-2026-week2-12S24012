@@ -23,3 +23,82 @@ body {
     line-height: 1.6;
     padding: 0;
 }
+
+/* 2. Layout Header & Nav */
+.site-header {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-30);
+}
+
+.logo span {
+    color: var(--accent-10);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-30);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-10);
+}
+
+/* 3. Main Content Container & Cards */
+.content-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card-section {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px 1px rgba(0,0,0,0.05);
+}
+
+.card-section h1, .card-section h2 {
+    color: var(--text-30);
+    margin-bottom: 1rem;
+}
+
+.lists-wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.list-box {
+    flex: 1;
+    min-width: 250px;
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.list-box ul, .list-box ol {
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
