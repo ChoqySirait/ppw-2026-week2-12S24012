@@ -1,0 +1,25 @@
+/* 1. Universal Reset & Variables */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Aturan Harmonik 60-30-10 */
+    --bg-60: #f8fafc;         /* 60% Warna Utama Latar Belakang */
+    --card-bg: #ffffff;
+    --text-30: #1e293b;       /* 30% Warna Teks & Struktur */
+    --text-muted: #64748b;
+    --accent-10: #0284c7;     /* 10% Warna Aksen & Tombol Aksi */
+    --accent-hover: #0369a1;
+    --border-color: #cbd5e1;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-60);
+    color: var(--text-30);
+    line-height: 1.6;
+    padding: 0;
+}
