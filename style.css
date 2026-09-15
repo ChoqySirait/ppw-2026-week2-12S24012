@@ -146,3 +146,38 @@ body {
 
 .badge-success { background: #d1fae5; color: #047857; }
 .badge-warning { background: #fef3c7; color: #b45309; }
+
+/* 6. Sidebar Info & Footer */
+.sidebar-info {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem 1.5rem;
+    background: #e0f2fe;
+    border-left: 4px solid var(--accent-10);
+    border-radius: 4px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* 7. Responsive Breakpoint (Media Query) */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .lists-wrapper {
+        flex-direction: column;
+    }
+    
+    .card-section {
+        padding: 1.25rem;
+    }
+}
