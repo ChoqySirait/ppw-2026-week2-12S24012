@@ -1,5 +1,5 @@
 # ppw-2026-week2-12S24012
-# 🌐 Portofolio Praktikum & Layanan Interaktif Accessible
+# 🌐 Portofolio & Layanan Interaktif Accessible
 
 Repositori ini berisi berkas Tugas Mandiri **Praktikum Minggu 02: HTML5, CSS3, & Perancangan Antarmuka Web Modern (Estetik & Responsif)** untuk mata kuliah **Pemrograman dan Pengujian Aplikasi Web (1253101)** di **Institut Teknologi Del**.
 
