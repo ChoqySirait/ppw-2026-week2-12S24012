@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Header & Navigasi Semantik -->
+    <!-- Header & Navigasi Utama: Memuat logo brand situs dan menu navigasi semantik -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo">Portofolio<span>Pro</span></div>
@@ -23,23 +23,23 @@
         </div>
     </header>
 
-    <!-- Konten Utama -->
+    <!-- Konten Utama: Pembungkus seluruh seksi konten web -->
     <main class="content-container">
 
-        <!-- Section Hero: Kartu Identitas Akademik -->
+        <!-- Section Identitas: Menyajikan profil diri, ketertarikan di bidang Pemrograman dan Bisnis -->
         <section id="identitas" class="card-section identity-section">
             <div class="identity-main">
-                <span class="badge-role">Mahasiswa S1 Sistem Informasi</span>
+                <span class="badge-role">Web Developer & Business Enthusiast</span>
                 <h1 class="user-name">Choqy Pananda Sirait</h1>
                 <div class="identity-details">
-                    <p><strong>NIM:</strong> 12S24012</p>
-                    <p><strong>Program Studi:</strong> S1 Sistem Informasi</p>
-                    <p><strong>Institusi:</strong> Institut Teknologi Del</p>
+                    <p class="bio-text">
+                        Saya adalah seorang pengembang antarmuka yang memiliki ketertarikan mendalam pada dunia pemrograman web dan ekosistem bisnis digital. Bagi saya, kode bukan sekadar baris perintah, melainkan sarana untuk membangun solusi produk yang estetik, efisien, serta memiliki nilai guna ekonomis. Saya selalu antusias menggabungkan logika logika rekayasa perangkat lunak dengan strategi pengembangan bisnis yang berdampak nyata.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Section 1: Tentang Saya & Alur Kerja -->
+        <!-- Section Tentang Saya: Memuat dua artikel independen (Keahlian Utama dan Alur Kerja) -->
         <section id="tentang" class="card-section">
             <header class="section-title-group">
                 <h2>Profil Keahlian & Metodologi</h2>
@@ -47,6 +47,7 @@
             </header>
             
             <div class="articles-grid">
+                <!-- Artikel Keahlian Utama: Menggunakan Unordered List (ul) -->
                 <article class="info-article">
                     <h3>Keahlian Utama (Unordered List)</h3>
                     <p class="article-intro">Fokus utama pengembangan antarmuka web modern sesuai standar WCAG 2.2 Level AA:</p>
@@ -58,6 +59,7 @@
                     </ul>
                 </article>
 
+                <!-- Artikel Alur Kerja: Menggunakan Ordered List (ol) -->
                 <article class="info-article">
                     <h3>Alur Kerja Pengembangan (Ordered List)</h3>
                     <p class="article-intro">Tahapan sistematis dalam menyelesaikan setiap tugas perancangan web:</p>
@@ -71,7 +73,7 @@
             </div>
         </section>
 
-        <!-- Section 2: Rekapitulasi Proyek / Matakuliah (Tabel Semantik Lengkap) -->
+        <!-- Section Portofolio: Menyajikan rekapitulasi proyek dalam bentuk tabel data semantik -->
         <section id="portofolio" class="card-section">
             <header class="section-title-group">
                 <h2>Rekapitulasi Proyek & Capaian</h2>
@@ -88,7 +90,6 @@
                             <th scope="col">Tanggal Penyelesaian</th>
                             <th scope="col">Teknologi</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Tautan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,7 +99,6 @@
                             <td><time datetime="2026-02-02">02 Februari 2026</time></td>
                             <td>HTML5, CSS3</td>
                             <td><span class="badge badge-success">Selesai</span></td>
-                            <td><a href="#identitas" class="table-link">Lihat Kode</a></td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -106,7 +106,6 @@
                             <td><time datetime="2026-03-15">15 Maret 2026</time></td>
                             <td>Figma, CSS Grid</td>
                             <td><span class="badge badge-warning">Proses</span></td>
-                            <td><span class="text-muted">-</span></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
@@ -114,12 +113,11 @@
                             <td><time datetime="2026-04-10">10 April 2026</time></td>
                             <td>HTML, CSS, JS</td>
                             <td><span class="badge badge-success">Selesai</span></td>
-                            <td><a href="#identitas" class="table-link">Lihat Kode</a></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="5">Total Proyek Terdaftar & Terverifikasi</td>
+                            <td colspan="4">Total Proyek Terdaftar & Terverifikasi</td>
                             <td class="table-total">3 Proyek</td>
                         </tr>
                     </tfoot>
@@ -127,7 +125,7 @@
             </div>
         </section>
 
-        <!-- Section 3: Formulir Pemesanan Layanan (Form Aksesibel) -->
+        <!-- Section Formulir Layanan: Pemesanan konsultasi interaktif dengan validasi dan aksesibilitas -->
         <section id="layanan" class="card-section">
             <header class="section-title-group">
                 <h2>Formulir Pemesanan Layanan Konsultasi</h2>
@@ -136,7 +134,7 @@
 
             <form class="custom-form" action="#" method="POST">
                 
-                <!-- Fieldset 1: Data Identitas Klien -->
+                <!-- Fieldset 1: Mengelompokkan input data identitas klien -->
                 <fieldset class="form-fieldset">
                     <legend class="form-legend">Data Identitas Pemesan</legend>
                     
@@ -165,7 +163,7 @@
                     </div>
                 </fieldset>
 
-                <!-- Fieldset 2: Detail Permintaan Layanan -->
+                <!-- Fieldset 2: Mengelompokkan pilihan detail spesifikasi layanan -->
                 <fieldset class="form-fieldset">
                     <legend class="form-legend">Detail Spesifikasi Layanan</legend>
                     
@@ -208,7 +206,7 @@
                     </div>
                 </fieldset>
 
-                <!-- Fieldset 3: Jadwal Konsultasi -->
+                <!-- Fieldset 3: Mengelompokkan input jadwal konsultasi -->
                 <fieldset class="form-fieldset">
                     <legend class="form-legend">Jadwal Sesi Konsultasi</legend>
                     
@@ -218,7 +216,7 @@
                     </div>
                 </fieldset>
 
-                <!-- Tombol Aksi Form -->
+                <!-- Tombol Aksi Form: Tombol submit dan reset -->
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Kirim Pemesanan Layanan</button>
                     <button type="reset" class="btn btn-secondary">Reset Formulir</button>
@@ -227,7 +225,7 @@
         </section>
     </main>
 
-    <!-- Sidebar Informasi Tambahan (Aside) -->
+    <!-- Sidebar Info (Aside): Konten informasi kontak tambahan -->
     <div class="aside-container">
         <aside class="sidebar-info">
             <h3>Informasi Kontak & Operasional</h3>
@@ -236,9 +234,9 @@
         </aside>
     </div>
 
-    <!-- Footer Semantik -->
+    <!-- Footer: Hak cipta penutup dokumen -->
     <footer class="site-footer">
-        <p>&copy; 2026 Portofolio Pro</p>
+        <p>&copy; 2026 Portofolio Pro - Choqy Pananda Sirait</p>
     </footer>
 
 </body>
