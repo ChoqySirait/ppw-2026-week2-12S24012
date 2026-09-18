@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET & VARIABLE WARNA HARMONIS (60-30-10)
+   1. UNIVERSAL RESET & ATURAN WARNA HARMONIS (60-30-10 RULE)
    ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -31,7 +31,7 @@ body {
 }
 
 /* ==========================================================================
-   2. HEADER STICKY
+   2. HEADER STICKY & NAVIGASI
    ========================================================================== */
 .site-header {
     position: sticky;
@@ -104,7 +104,7 @@ body {
 }
 
 /* ==========================================================================
-   3. DASHBOARD GRID SYSTEM
+   3. DASHBOARD GRID SYSTEM (KOLOM KIRI & KANAN)
    ========================================================================== */
 .dashboard-wrapper {
     max-width: 1280px;
@@ -116,7 +116,7 @@ body {
     align-items: start;
 }
 
-/* Left Sidebar */
+/* Kolom Kiri Sticky Sidebar */
 .left-sidebar {
     position: sticky;
     top: 5rem;
@@ -145,17 +145,14 @@ body {
     margin-bottom: 1rem;
 }
 
-.avatar-circle {
-    width: 48px;
-    height: 48px;
-    background: var(--accent-primary);
-    color: #ffffff;
+/* Styling Foto Profil Bulat Presisi */
+.avatar-img {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.1rem;
+    object-fit: cover;
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .badge-status {
@@ -230,7 +227,7 @@ body {
     margin-bottom: 0.25rem;
 }
 
-/* Right Content */
+/* Kolom Kanan Konten Utama */
 .right-content {
     display: flex;
     flex-direction: column;
@@ -254,7 +251,7 @@ body {
     color: var(--text-dark);
 }
 
-/* Articles */
+/* Artikel Keahlian & Alur Kerja Side-by-Side */
 .articles-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -290,7 +287,7 @@ body {
 }
 
 /* ==========================================================================
-   4. TABEL
+   4. TABEL DATA SEMANTIK
    ========================================================================== */
 .table-wrapper {
     overflow-x: auto;
@@ -357,7 +354,7 @@ body {
 }
 
 /* ==========================================================================
-   5. FORM
+   5. FORMULIR AKSESIBEL MODERN
    ========================================================================== */
 .custom-form {
     display: flex;
@@ -414,6 +411,7 @@ body {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* Ring Fokus WCAG 2.2 */
 .form-control:focus {
     outline: none;
     border-color: var(--accent-primary);
@@ -461,7 +459,9 @@ textarea.form-control {
 .btn-secondary { background: #f1f5f9; color: var(--text-body); border: 1px solid var(--border-color); flex: 1; }
 .btn-secondary:hover { background: #e2e8f0; }
 
-/* Footer */
+/* ==========================================================================
+   6. FOOTER & MEDIA QUERY RESPONSIVE
+   ========================================================================== */
 .site-footer {
     text-align: center;
     padding: 1.5rem;
@@ -472,7 +472,6 @@ textarea.form-control {
     margin-top: 2rem;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .dashboard-wrapper {
         grid-template-columns: 1fr;
