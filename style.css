@@ -18,9 +18,9 @@
     --accent-hover: #0369a1;
     --accent-light: #e0f2fe;
     --accent-emerald: #10b981;
-    --radius-md: 12px;
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    --radius-md: 10px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.06);
 }
 
 body {
@@ -51,23 +51,11 @@ body {
     align-items: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logo-icon {
-    background: var(--accent-light);
-    padding: 0.25rem 0.55rem;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
 .logo-text {
     font-weight: 800;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--text-dark);
+    letter-spacing: -0.02em;
 }
 
 .logo-text span { color: var(--accent-primary); }
@@ -104,14 +92,14 @@ body {
 }
 
 /* ==========================================================================
-   3. DASHBOARD GRID SYSTEM (KOLOM KIRI & KANAN)
+   3. DASHBOARD GRID SYSTEM (LAYOUT 2 KOLOM)
    ========================================================================== */
 .dashboard-wrapper {
     max-width: 1280px;
     margin: 2rem auto;
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: 1.75rem;
     align-items: start;
 }
@@ -145,14 +133,12 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Styling Foto Profil Bulat Presisi */
 .avatar-img {
     width: 52px;
     height: 52px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-primary);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .badge-status {
@@ -176,7 +162,7 @@ body {
 }
 
 .user-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--text-dark);
     margin-bottom: 0.5rem;
@@ -184,7 +170,7 @@ body {
 }
 
 .user-bio {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     color: var(--text-body);
     margin-bottom: 1.25rem;
     line-height: 1.6;
@@ -193,7 +179,7 @@ body {
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: 0.4rem;
 }
 
 .tag {
@@ -201,8 +187,8 @@ body {
     color: var(--accent-primary);
     font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
+    padding: 0.25rem 0.55rem;
+    border-radius: 4px;
 }
 
 .info-card-aside {
@@ -210,16 +196,10 @@ body {
     border-left: 4px solid var(--accent-primary);
 }
 
-.aside-title {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
 .aside-title h3 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-dark);
+    margin-bottom: 0.4rem;
 }
 
 .aside-body p {
@@ -246,7 +226,7 @@ body {
 }
 
 .section-header h2 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-dark);
 }
@@ -265,16 +245,10 @@ body {
     border-radius: 8px;
 }
 
-.article-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-}
-
 .article-header h3 {
     font-size: 0.95rem;
     color: var(--text-dark);
+    margin-bottom: 0.75rem;
 }
 
 .styled-list {
@@ -411,7 +385,6 @@ body {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Ring Fokus WCAG 2.2 */
 .form-control:focus {
     outline: none;
     border-color: var(--accent-primary);
@@ -459,9 +432,7 @@ textarea.form-control {
 .btn-secondary { background: #f1f5f9; color: var(--text-body); border: 1px solid var(--border-color); flex: 1; }
 .btn-secondary:hover { background: #e2e8f0; }
 
-/* ==========================================================================
-   6. FOOTER & MEDIA QUERY RESPONSIVE
-   ========================================================================== */
+/* Footer */
 .site-footer {
     text-align: center;
     padding: 1.5rem;
@@ -472,6 +443,7 @@ textarea.form-control {
     margin-top: 2rem;
 }
 
+/* Responsive Breakpoint */
 @media (max-width: 992px) {
     .dashboard-wrapper {
         grid-template-columns: 1fr;
