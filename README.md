@@ -1,49 +1,54 @@
 # ppw-2026-week2-12S24012
-# 🌐 Portofolio & Layanan Interaktif Accessible
+# 🌐 Modern Accessible Portfolio & Service Dashboard
 
-Repositori ini berisi berkas Tugas Mandiri **Praktikum Minggu 02: HTML5, CSS3, & Perancangan Antarmuka Web Modern (Estetik & Responsif)** untuk mata kuliah **Pemrograman dan Pengujian Aplikasi Web (1253101)** di **Institut Teknologi Del**.
+Repositori ini berisi berkas kode sumber untuk **Tugas Mandiri Minggu 02: HTML5 Semantik, CSS3 Modern, & Aksesibilitas Antarmuka Web** pada mata kuliah **Pemrograman dan Pengujian Aplikasi Web (1253101)** — **Institut Teknologi Del**.
 
----
-
-## 📌 Identitas Pemilik Proyek
-
-* **Nama:** Choqy Pananda Sirait
-* **GitHub Username:** [@ChoqySirait](https://github.com/ChoqySirait)
-* **Deskripsi Singkat:** Pengembang antarmuka web yang memiliki ketertarikan kuat dalam bidang pemrograman perangkat lunak serta eksplorasi strategi bisnis digital.
+Proyek ini dirancang menggunakan arsitektur **Dashboard Layout 2-Kolom** yang bersih, responsif, dan fungsional, tanpa bantuan pustaka (framework) eksternal maupun JavaScript, dengan fokus utama pada pemenuhan standar **WCAG 2.2 Level AA**.
 
 ---
 
-## 🚀 Demo Implementasi Live (GitHub Pages)
+## 📌 Informasi Pemilik & Deployment Live
 
-Halaman web ini telah dipublikasikan secara *live* dan dapat diakses melalui tautan berikut:  
-👉 **[Live Demo GitHub Pages](https://ChoqySirait.github.io/ppw-2026-week2-12S24012/)**
-
----
-
-## 🛠️ Spesifikasi Teknis & Aksesibilitas
-
-Pengembangan antarmuka ini mengimplementasikan standar **WCAG 2.2 Level AA** serta kaidah tata letak modern:
-
-1. **Struktur Semantik HTML5**:
-   - Memanfaatkan elemen semantik lengkap (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`) secara logis tanpa *div-soup*.
-2. **Penyajian Data Terstruktur**:
-   - **HTML Lists**: Menggunakan kombinasi Unordered List (`<ul>`) dan Ordered List (`<ol>`) untuk memisahkan daftar keahlian dan langkah alur kerja.
-   - **Tabel Semantik**: Dilengkapi `<caption>`, `<thead>`, `<tbody>`, `<tfoot>`, atribut `scope="col/row"`, serta tag semantik `<time>` untuk penanggalan.
-3. **Formulir Aksesibel (WCAG 2.2 AA)**:
-   - Terdiri dari 3 pengelompokan `<fieldset>` dan `<legend>`.
-   - Menggunakan **8 jenis kontrol input**: `text`, `email`, `tel`, `number`, `select`, `radio`, `checkbox`, `textarea`, dan `date`.
-   - Menghubungkan label eksplisit (`for="..."`), validasi native (`required`), serta indikator fokus visual (*Focus Ring*).
-4. **Estetika & Layout CSS Modern**:
-   - Menerapkan *Universal Reset Box Sizing* (`box-sizing: border-box`).
-   - Menerapkan **Aturan Harmonisasi Warna 60-30-10**.
-   - Tata letak responsif menggunakan **CSS Flexbox** dan **Media Queries** (`@media (max-width: 768px)`).
+* **Nama Pengembang:** Choqy Pananda Sirait
+* **NIM / Program Studi:** 12S24012 — S1 Sistem Informasi
+* **Institusi:** Institut Teknologi Del
+* **Profil GitHub:** [@ChoqySirait](https://github.com/ChoqySirait)
+* **Live Demo (GitHub Pages):** [https://choqysirait.github.io/ppw-2026-week2-12S24012/]
 
 ---
 
-## 📂 Struktur Berkas
+## 🛠️ Fitur Utama & Keunggulan Teknis
+
+Dokumen web ini dibangun murni menggunakan **HTML5 & CSS3** dengan memperhatikan standar *UI/UX Engineering* serta rubrik penilaian praktikum:
+
+### 1. Arsitektur Semantik HTML5 Penuh
+- **Struktur Logis**: Memanfaatkan elemen semantik murni (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`) tanpa *div-soup*.
+- **Hierarki Konten**: Penggunaan tingkat judul (`<h1>`, `<h2>`, `<h3>`) yang terurut dan konsisten di seluruh seksi.
+
+### 2. Penyajian Data Terstruktur & Accessible
+- **Kombinasi Elemen List**: Menggunakan Unordered List (`<ul>`) untuk daftar keahlian dan Ordered List (`<ol>`) untuk alur kerja sistematis.
+- **Tabel Semantik Kompleks**: Dilengkapi `<caption>` untuk judul tabel, `<thead>`, `<tbody>`, `<tfoot>`, atribut `scope="col/row"` pada header tabel, serta tag `<time datetime="...">` untuk format penanggalan yang terbaca oleh mesin.
+
+### 3. Formulir Layanan Interaktif (WCAG 2.2 AA Standard)
+- **Pengelompokan Kontrol**: Dibagi menjadi 3 kelompok `<fieldset>` dan `<legend>` yang terstruktur.
+- **Variasi Kontrol Input (8+ Jenis)**: Terdiri dari `text`, `email`, `tel`, `number`, `select`, `radio`, `checkbox`, `textarea`, dan `date`.
+- **Aksesibilitas & Validasi**: Menghubungkan label eksplisit (`for="..."`), validasi native (`required`), serta indikator fokus visual (*Focus Ring*) yang rapi bagi pengguna keyboard.
+
+### 4. Layout CSS Modern & Harmonisasi Warna (Aturan 60-30-10)
+- **Universal Box Sizing Reset**: Menggunakan `box-sizing: border-box` untuk kalkulasi tata letak yang presisi.
+- **Skema Warna Corporate**: 
+  - **60% Dominan Netral**: Soft Slate & Pure White (`#f8fafc`, `#ffffff`)
+  - **30% Teks & Struktur**: Dark Slate (`#0f172a`, `#334155`)
+  - **10% Aksen & Interaksi**: Sky Blue (`#0284c7`)
+- **Dashboard Grid System**: Menggunakan **CSS Grid 2-Kolom** (`320px 1fr`) dengan fitur *Sticky Sidebar* pada layar desktop, dan otomatis berubah menjadi 1 kolom responsif pada layar perangkat bergerak (`@media (max-width: 992px)`).
+
+---
+
+## 📂 Struktur Repositori
 
 ```text
 .
-├── index.html     # Dokumen utama HTML5 semantik
-├── style.css      # Berkas stylesheet untuk styling estetik, warna, & responsivitas
-└── README.md      # Dokumentasi resmi repositori proyek
+├── index.html        # Berkas dokumen utama HTML5 Semantik
+├── style.css         # Stylesheet eksternal (Dashboard Grid, CSS Variables, & Responsive)
+├── foto-profile.jpg  # Berkas foto profil pengembang
+└── README.md         # Dokumentasi resmi repositori & spesifikasi teknis
