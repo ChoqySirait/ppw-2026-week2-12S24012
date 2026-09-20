@@ -68,4 +68,4 @@ Dokumen web ini dibangun murni menggunakan **HTML5 & CSS3** dengan memperhatikan
 
 ```
 
-                                                                        ``` ##End ```
+``` ##End ```
