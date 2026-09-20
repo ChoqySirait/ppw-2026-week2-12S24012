@@ -17,9 +17,17 @@ Proyek ini dirancang menggunakan arsitektur **Dashboard Layout 2-Kolom** yang be
 
 ---
 
+Web: 
+
 <img width="959" height="566" alt="image" src="https://github.com/user-attachments/assets/2eac88e8-f53a-4534-858c-b207e53d5abb" />
 
+
 <img width="959" height="535" alt="image" src="https://github.com/user-attachments/assets/e0bf4066-9b82-4088-a9ed-0bec9c2bb93b" />
+
+
+Mobile:
+
+<img width="532" height="530" alt="image" src="https://github.com/user-attachments/assets/3fe6d3a6-a40c-4605-a6bc-3f6a9219123d" />
 
 
 ## 🛠️ Fitur Utama & Keunggulan Teknis
