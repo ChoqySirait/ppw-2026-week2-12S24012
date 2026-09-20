@@ -19,6 +19,9 @@ Proyek ini dirancang menggunakan arsitektur **Dashboard Layout 2-Kolom** yang be
 
 <img width="959" height="566" alt="image" src="https://github.com/user-attachments/assets/2eac88e8-f53a-4534-858c-b207e53d5abb" />
 
+<img width="959" height="535" alt="image" src="https://github.com/user-attachments/assets/e0bf4066-9b82-4088-a9ed-0bec9c2bb93b" />
+
+
 ## 🛠️ Fitur Utama & Keunggulan Teknis
 
 Dokumen web ini dibangun murni menggunakan **HTML5 & CSS3** dengan memperhatikan standar *UI/UX Engineering* serta rubrik penilaian praktikum:
