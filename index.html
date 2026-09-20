@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <!-- Pengaturan Karakter Utama & Viewport untuk Responsivitas Mobile -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Choqy Pananda Sirait</title>
-
     <!-- Google Fonts untuk Tipografi Modern Standar Industri -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Berkas CSS Eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ===================================================================
-         HEADER & NAVIGASI UTAMA (TAG SEMANTIK: <header> & <nav>)
-         -- Memuat logo situs dan link navigasi anchor ke tiap seksi
-         =================================================================== -->
+    <!-- Header & Navigasi Utama -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
                 <span class="logo-text">Portofolio<span>.</span></span>
             </div>
-            <!-- Tag Navigasi dengan ARIA Label untuk Aksesibilitas WCAG -->
             <nav class="main-nav" aria-label="Navigasi Utama">
                 <ul>
                     <li><a href="#identitas" class="nav-link">Identitas</a></li>
@@ -37,22 +29,14 @@
         </div>
     </header>
 
-    <!-- ===================================================================
-         DASHBOARD WRAPPER (LAYOUT GRID 2-KOLOM)
-         -- Pembungkus utama kolom kiri (aside) dan kolom kanan (main)
-         =================================================================== -->
+    <!-- Container Utama Dashboard (Layout 2 Kolom) -->
     <div class="dashboard-wrapper">
         
-        <!-- ===============================================================
-             KOLOM KIRI: STICKY SIDEBAR (TAG SEMANTIK: <aside>)
-             -- Memuat kartu profil diri dan informasi operasional/kontak
-             =============================================================== -->
+        <!-- KOLOM KIRI: Profil & Informasi Kontak (Sticky Sidebar) -->
         <aside class="left-sidebar">
-            
-            <!-- Seksi Identitas Diri (TAG SEMANTIK: <section>) -->
+            <!-- Section Identitas Diri -->
             <section id="identitas" class="card-section profile-card">
                 <div class="profile-header-avatar">
-                    <!-- Foto Profil dengan ALT Text Deskriptif (WCAG Compliance) -->
                     <img src="foto-profile.jpg" alt="Foto Profil Choqy Pananda Sirait" class="avatar-img">
                     <div class="badge-status">
                         <span class="pulse-dot"></span> Available for Projects
@@ -70,7 +54,7 @@
                 </div>
             </section>
 
-            <!-- Seksi Aside Kontak Tambahan (TAG SEMANTIK: <aside>) -->
+            <!-- Section Aside Informasi Kontak & Operasional -->
             <aside class="card-section info-card-aside">
                 <div class="aside-title">
                     <h3>Operasional & Kontak</h3>
@@ -82,20 +66,16 @@
             </aside>
         </aside>
 
-        <!-- ===============================================================
-             KOLOM KANAN: KONTEN UTAMA (TAG SEMANTIK: <main>)
-             -- Memuat seksi metodologi, tabel rekapitulasi, & form interaktif
-             =============================================================== -->
+        <!-- KOLOM KANAN: Konten Utama -->
         <main class="right-content">
 
-            <!-- SEKSI 1: PROFIL KEAHLIAN & ALUR KERJA (TAG SEMANTIK: <section>) -->
+            <!-- Section 1: Profil Keahlian & Alur Kerja (id="tentang") -->
             <section id="tentang" class="card-section">
                 <header class="section-header">
                     <h2>Profil Keahlian & Alur Kerja</h2>
                 </header>
                 
                 <div class="articles-grid">
-                    <!-- Artikel 1: Keahlian Utama menggunakan Unordered List (<ul>) -->
                     <article class="info-article">
                         <div class="article-header">
                             <h3>Keahlian Utama (Unordered List)</h3>
@@ -108,7 +88,6 @@
                         </ul>
                     </article>
 
-                    <!-- Artikel 2: Alur Kerja menggunakan Ordered List (<ol>) -->
                     <article class="info-article">
                         <div class="article-header">
                             <h3>Alur Kerja Pengembangan (Ordered List)</h3>
@@ -123,14 +102,13 @@
                 </div>
             </section>
 
-            <!-- SEKSI 2: TABEL PORTOFOLIO (TAG SEMANTIK: <section> & <table>) -->
+            <!-- Section 2: Tabel Portofolio (id="portofolio") -->
             <section id="portofolio" class="card-section">
                 <header class="section-header">
                     <h2>Tabel Proyek & Capaian</h2>
                 </header>
                 
                 <div class="table-wrapper">
-                    <!-- Tabel Semantik Lengkap (caption, thead, tbody, tfoot, & scope) -->
                     <table class="data-table">
                         <caption>Tabel 1.1: Rekapitulasi Proyek Pengembangan Antarmuka Web</caption>
                         <thead>
@@ -146,7 +124,6 @@
                             <tr>
                                 <th scope="row">01</th>
                                 <td><strong>Praktikum Web Week 02</strong></td>
-                                <!-- Elemen <time> Semantik untuk Penanggalan -->
                                 <td><time datetime="2026-02-02">02 Feb 2026</time></td>
                                 <td><span class="tech-pill">HTML5</span> <span class="tech-pill">CSS3</span></td>
                                 <td><span class="badge badge-success"><span class="badge-dot"></span> Selesai</span></td>
@@ -176,15 +153,13 @@
                 </div>
             </section>
 
-            <!-- SEKSI 3: FORMULIR AKSESIBEL (TAG SEMANTIK: <section> & <form>) -->
+            <!-- Section 3: Formulir Layanan (id="layanan") -->
             <section id="layanan" class="card-section">
                 <header class="section-header">
                     <h2>Formulir Layanan Konsultasi</h2>
                 </header>
 
                 <form class="custom-form" action="#" method="POST">
-                    
-                    <!-- Fieldset 1: Pengelompokan Data Identitas Pemesan -->
                     <fieldset class="form-fieldset">
                         <legend class="form-legend">1. Data Identitas Pemesan</legend>
                         <div class="form-grid-2">
@@ -207,7 +182,6 @@
                         </div>
                     </fieldset>
 
-                    <!-- Fieldset 2: Pengelompokan Detail Spesifikasi Layanan -->
                     <fieldset class="form-fieldset">
                         <legend class="form-legend">2. Detail Spesifikasi Layanan</legend>
                         <div class="form-group">
@@ -250,7 +224,6 @@
                         </div>
                     </fieldset>
 
-                    <!-- Fieldset 3: Pengelompokan Sesi Konsultasi -->
                     <fieldset class="form-fieldset">
                         <legend class="form-legend">3. Jadwal Sesi Konsultasi</legend>
                         <div class="form-group">
@@ -259,7 +232,6 @@
                         </div>
                     </fieldset>
 
-                    <!-- Tombol Aksi Formulir (Submit & Reset) -->
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Kirim Permintaan</button>
                         <button type="reset" class="btn btn-secondary">Reset Formulir</button>
@@ -269,9 +241,7 @@
         </main>
     </div>
 
-    <!-- ===================================================================
-         FOOTER (TAG SEMANTIK: <footer>)
-         =================================================================== -->
+    <!-- Footer Semantik -->
     <footer class="site-footer">
         <p>&copy; 2026 Portofolio — Disusun oleh <strong>Choqy Pananda Sirait</strong></p>
     </footer>

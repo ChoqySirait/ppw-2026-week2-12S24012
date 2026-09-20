@@ -1,6 +1,5 @@
 /* ==========================================================================
-   1. UNIVERSAL RESET & ATURAN WARNA HARMONIS (60-30-10 RULE)
-   -- Menyamakan perhitungan box model di semua browser & variabel warna
+   1. UNIVERSAL RESET & SMOOTH SCROLLING
    ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -8,24 +7,22 @@
     padding: 0;
 }
 
+/* Mengaktifkan Animasi Pergerakan Halus Saat Tombol Menu Diklik */
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
-    /* 60% Warna Dominan Netral (Background Utama & Card) */
     --bg-main: #f8fafc;
     --card-bg: #ffffff;
-
-    /* 30% Warna Teks & Struktur Utama */
     --text-dark: #0f172a;
     --text-body: #334155;
     --text-muted: #64748b;
     --border-color: #cbd5e1;
-
-    /* 10% Warna Aksen & Tombol Interaktif */
     --accent-primary: #0284c7;
     --accent-hover: #0369a1;
     --accent-light: #e0f2fe;
     --accent-emerald: #10b981;
-
-    /* Styling Universal */
     --radius-md: 10px;
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
     --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.06);
@@ -36,14 +33,12 @@ body {
     background-color: var(--bg-main);
     color: var(--text-body);
     line-height: 1.6;
-    /* Mencegah kebocoran scroll horizontal di tingkat dokumen */
     overflow-x: hidden;
     width: 100%;
 }
 
 /* ==========================================================================
    2. HEADER STICKY & NAVIGASI
-   -- Header menempel di atas dengan efek blur transparan
    ========================================================================== */
 .site-header {
     position: sticky;
@@ -71,9 +66,7 @@ body {
     letter-spacing: -0.02em;
 }
 
-.logo-text span { 
-    color: var(--accent-primary); 
-}
+.logo-text span { color: var(--accent-primary); }
 
 .main-nav ul {
     display: flex;
@@ -107,8 +100,7 @@ body {
 }
 
 /* ==========================================================================
-   3. DASHBOARD GRID SYSTEM (LAYOUT 2 KOLOM DESKTOP)
-   -- Menggunakan CSS Grid 320px (Sidebar) dan 1fr (Konten Utama)
+   3. DASHBOARD GRID SYSTEM
    ========================================================================== */
 .dashboard-wrapper {
     max-width: 1280px;
@@ -121,7 +113,6 @@ body {
     width: 100%;
 }
 
-/* Kolom Kiri: Sticky Sidebar */
 .left-sidebar {
     position: sticky;
     top: 5rem;
@@ -137,6 +128,7 @@ body {
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     transition: transform 0.2s, box-shadow 0.2s;
+    scroll-margin-top: 5rem; /* Menjaga agar seksi tidak tertutup header saat di-scroll */
 }
 
 .card-section:hover {
@@ -150,7 +142,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Foto Profil Bulat Presisi */
 .avatar-img {
     width: 52px;
     height: 52px;
@@ -225,12 +216,11 @@ body {
     margin-bottom: 0.25rem;
 }
 
-/* Kolom Kanan: Konten Utama */
 .right-content {
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
-    min-width: 0; /* Mencegah elemen Flex/Grid meluap keluar */
+    min-width: 0;
 }
 
 .section-header {
@@ -243,7 +233,6 @@ body {
     color: var(--text-dark);
 }
 
-/* Artikel Keahlian & Alur Kerja Side-by-Side */
 .articles-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -273,8 +262,7 @@ body {
 }
 
 /* ==========================================================================
-   4. TABEL DATA SEMANTIK & CUSTOM SCROLL
-   -- Pembungkus tabel dengan scroll horizontal jika layar HP terlalu sempit
+   4. TABEL
    ========================================================================== */
 .table-wrapper {
     overflow-x: auto;
@@ -288,7 +276,7 @@ body {
     border-collapse: collapse;
     font-size: 0.85rem;
     text-align: left;
-    min-width: 500px; /* Menjaga struktur tabel tetap terbaca di layar HP */
+    min-width: 500px;
 }
 
 .data-table caption {
@@ -343,7 +331,7 @@ body {
 }
 
 /* ==========================================================================
-   5. FORMULIR AKSESIBEL MODERN
+   5. FORM
    ========================================================================== */
 .custom-form {
     display: flex;
@@ -400,7 +388,6 @@ body {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Indikator Focus Ring WCAG 2.2 AA */
 .form-control:focus {
     outline: none;
     border-color: var(--accent-primary);
@@ -448,9 +435,6 @@ textarea.form-control {
 .btn-secondary { background: #f1f5f9; color: var(--text-body); border: 1px solid var(--border-color); flex: 1; }
 .btn-secondary:hover { background: #e2e8f0; }
 
-/* ==========================================================================
-   6. FOOTER
-   ========================================================================== */
 .site-footer {
     text-align: center;
     padding: 1.5rem;
@@ -463,11 +447,8 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   7. RESPONSIVE BREAKPOINTS (SOLUSI TAMPILAN MOBILE BISA DIBUKA DI HP)
-   -- Mengatur layout menjadi 1 kolom penuh di layar tablet dan ponsel
+   6. RESPONSIVE BREAKPOINTS
    ========================================================================== */
-
-/* Tablet & Mobile Landscape (< 992px) */
 @media (max-width: 992px) {
     .dashboard-wrapper {
         grid-template-columns: 1fr;
@@ -476,25 +457,24 @@ textarea.form-control {
     }
 
     .left-sidebar {
-        position: static; /* Sidebar tidak lagi melayang di mobile */
+        position: static;
     }
 
     .form-grid-2, .articles-grid {
-        grid-template-columns: 1fr; /* Form & Artikel berubah dari 2 kolom ke 1 kolom */
+        grid-template-columns: 1fr;
     }
 }
 
-/* Mobile Portrait / Layar Kecil (< 600px) */
 @media (max-width: 600px) {
     .header-container {
-        flex-direction: column; /* Logo & Menu Navigasi turun bersusun */
+        flex-direction: column;
         gap: 0.75rem;
         padding: 0.75rem 1rem;
     }
 
     .main-nav ul {
         gap: 0.75rem;
-        flex-wrap: wrap; /* Menu tidak memaksa melebar ke kanan */
+        flex-wrap: wrap;
         justify-content: center;
     }
 
@@ -503,7 +483,7 @@ textarea.form-control {
     }
 
     .card-section {
-        padding: 1.25rem; /* Mengecilkan padding kartu agar tidak sempit di HP */
+        padding: 1.25rem;
     }
 
     .profile-header-avatar {
@@ -517,7 +497,7 @@ textarea.form-control {
     }
 
     .form-actions {
-        flex-direction: column; /* Tombol Kirim & Reset bersusun vertikal */
+        flex-direction: column;
     }
 
     .btn {
