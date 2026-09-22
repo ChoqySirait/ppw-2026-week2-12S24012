@@ -104,3 +104,26 @@ body {
     background-color: var(--sun-red);
     border-color: var(--sun-red);
 }
+
+/* formulir dan validasi kustom */
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+    border-color: var(--sun-red);
+    background-color: var(--canvas-white);
+}
+
+/* efek label melayang berwarna merah saat input diklik */
+.form-floating:focus-within > label {
+    color: var(--sun-red);
+}
+
+.katana-form .form-control, .katana-form .form-select {
+    color: var(--ink-black);
+    font-weight: 500;
+}
+
+/* menimpa warna checkbox validasi bootstrap menjadi merah */
+.form-check-input:checked {
+    background-color: var(--sun-red);
+    border-color: var(--sun-red);
+}
