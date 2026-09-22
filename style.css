@@ -1,506 +1,81 @@
-/* ==========================================================================
-   1. UNIVERSAL RESET & SMOOTH SCROLLING
-   ========================================================================== */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Mengaktifkan Animasi Pergerakan Halus Saat Tombol Menu Diklik */
-html {
-    scroll-behavior: smooth;
-}
-
+/* Variabel Tema Sumi-e (White Samurai) */
 :root {
-    --bg-main: #f8fafc;
-    --card-bg: #ffffff;
-    --text-dark: #0f172a;
-    --text-body: #334155;
-    --text-muted: #64748b;
-    --border-color: #cbd5e1;
-    --accent-primary: #0284c7;
-    --accent-hover: #0369a1;
-    --accent-light: #e0f2fe;
-    --accent-emerald: #10b981;
-    --radius-md: 10px;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.06);
+    --canvas-white: #f5f5f0;   
+    --ink-black: #0d0d0d;      
+    --ink-gray: #4a4a4a;       
+    --sun-red: #d32f2f;        
+    --katana-silver: #cfcfcf;  
+    
+    --shadow-solid: 6px 6px 0px rgba(13, 13, 13, 1);
+    --transition-blade: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* Reset & Body */
 body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-body);
-    line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    background-color: var(--canvas-white);
+    color: var(--ink-black);
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 0;
 }
 
-/* ==========================================================================
-   2. HEADER STICKY & NAVIGASI
-   ========================================================================== */
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    width: 100%;
-}
-
-.header-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0.85rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-text {
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--text-dark);
-    letter-spacing: -0.02em;
-}
-
-.logo-text span { color: var(--accent-primary); }
-
-.main-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.25rem;
-    align-items: center;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--text-body);
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: color 0.2s;
-}
-
-.nav-link:hover {
-    color: var(--accent-primary);
-}
-
-.nav-btn {
-    background-color: var(--accent-primary);
-    color: #ffffff;
-    padding: 0.45rem 1rem;
-    border-radius: 6px;
-}
-
-.nav-btn:hover {
-    background-color: var(--accent-hover);
-    color: #ffffff;
-}
-
-/* ==========================================================================
-   3. DASHBOARD GRID SYSTEM
-   ========================================================================== */
-.dashboard-wrapper {
-    max-width: 1280px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 1.75rem;
-    align-items: start;
-    width: 100%;
-}
-
-.left-sidebar {
-    position: sticky;
-    top: 5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.card-section {
-    background: var(--card-bg);
-    border-radius: var(--radius-md);
-    padding: 1.75rem;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s, box-shadow 0.2s;
-    scroll-margin-top: 5rem; /* Menjaga agar seksi tidak tertutup header saat di-scroll */
-}
-
-.card-section:hover {
-    box-shadow: var(--shadow-hover);
-}
-
-.profile-header-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.avatar-img {
-    width: 52px;
-    height: 52px;
+/* Ornamen Matahari Merah (Posisi absolute di belakang konten) */
+.red-sun {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background-color: var(--sun-red);
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent-primary);
+    z-index: -1;
+    opacity: 0.12; 
 }
 
-.badge-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: #ecfdf5;
-    color: #047857;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.65rem;
-    border-radius: 999px;
-    border: 1px solid #a7f3d0;
+/* Navbar */
+.samurai-nav {
+    background-color: rgba(245, 245, 240, 0.9);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid var(--ink-black);
 }
 
-.pulse-dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent-emerald);
-    border-radius: 50%;
+.brand-ink {
+    color: var(--ink-black);
+    letter-spacing: 2px;
 }
 
-.user-name {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-}
-
-.user-bio {
+.samurai-nav .nav-link {
+    color: var(--ink-gray);
+    text-transform: uppercase;
     font-size: 0.85rem;
-    color: var(--text-body);
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
+    letter-spacing: 1.5px;
+    transition: var(--transition-blade);
 }
 
-.skills-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+.samurai-nav .nav-link:hover {
+    color: var(--ink-black);
+    transform: translateX(3px); 
 }
 
-.tag {
-    background: var(--accent-light);
-    color: var(--accent-primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.55rem;
-    border-radius: 4px;
+/* Tipografi Hero */
+.fw-black { font-weight: 900; }
+.tracking-widest { letter-spacing: 4px; }
+
+/* Tombol Samurai */
+.btn-blade {
+    background-color: var(--ink-black);
+    color: var(--canvas-white);
+    border: 2px solid var(--ink-black);
+    border-radius: 0; 
+    transition: var(--transition-blade);
 }
 
-.info-card-aside {
-    background: #f0f9ff;
-    border-left: 4px solid var(--accent-primary);
-}
-
-.aside-title h3 {
-    font-size: 0.9rem;
-    color: var(--text-dark);
-    margin-bottom: 0.4rem;
-}
-
-.aside-body p {
-    font-size: 0.85rem;
-    margin-bottom: 0.25rem;
-}
-
-.right-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-    min-width: 0;
-}
-
-.section-header {
-    margin-bottom: 1.25rem;
-}
-
-.section-header h2 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--text-dark);
-}
-
-.articles-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-}
-
-.info-article {
-    background: #f8fafc;
-    border: 1px solid var(--border-color);
-    padding: 1.25rem;
-    border-radius: 8px;
-}
-
-.article-header h3 {
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    margin-bottom: 0.75rem;
-}
-
-.styled-list {
-    margin-left: 1.2rem;
-    font-size: 0.85rem;
-}
-
-.styled-list li {
-    margin-bottom: 0.35rem;
-}
-
-/* ==========================================================================
-   4. TABEL
-   ========================================================================== */
-.table-wrapper {
-    overflow-x: auto;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    width: 100%;
-}
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-    text-align: left;
-    min-width: 500px;
-}
-
-.data-table caption {
-    caption-side: top;
-    text-align: left;
-    padding: 0.6rem 0.85rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    background: #f8fafc;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.data-table th, .data-table td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.data-table thead th {
-    background: #f8fafc;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.tech-pill {
-    background: #f1f5f9;
-    border: 1px solid var(--border-color);
-    padding: 0.15rem 0.45rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-.badge-dot { width: 5px; height: 5px; border-radius: 50%; }
-.badge-success { background: #d1fae5; color: #047857; }
-.badge-success .badge-dot { background: #047857; }
-.badge-warning { background: #fef3c7; color: #b45309; }
-.badge-warning .badge-dot { background: #b45309; }
-
-.table-total {
-    color: var(--accent-primary);
-    font-weight: 700;
-}
-
-/* ==========================================================================
-   5. FORM
-   ========================================================================== */
-.custom-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-.form-fieldset {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.25rem;
-    background: #ffffff;
-}
-
-.form-legend {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--accent-primary);
-    padding: 0 0.4rem;
-}
-
-.form-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-bottom: 0.85rem;
-}
-
-.form-group:last-child {
-    margin-bottom: 0;
-}
-
-.form-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-
-.req { color: #ef4444; }
-
-.form-control {
-    width: 100%;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
-    background: #f8fafc;
-    border: 1.5px solid var(--border-color);
-    border-radius: 6px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--accent-primary);
-    background: #ffffff;
-    box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.18);
-}
-
-textarea.form-control {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.radio-stack, .checkbox-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    margin-top: 0.2rem;
-}
-
-.option-label {
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    cursor: pointer;
-}
-
-.form-actions {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 700;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-primary { background: var(--accent-primary); color: #ffffff; flex: 2; }
-.btn-primary:hover { background: var(--accent-hover); }
-.btn-secondary { background: #f1f5f9; color: var(--text-body); border: 1px solid var(--border-color); flex: 1; }
-.btn-secondary:hover { background: #e2e8f0; }
-
-.site-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: #ffffff;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 2rem;
-    width: 100%;
-}
-
-/* ==========================================================================
-   6. RESPONSIVE BREAKPOINTS
-   ========================================================================== */
-@media (max-width: 992px) {
-    .dashboard-wrapper {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-        margin: 1rem auto;
-    }
-
-    .left-sidebar {
-        position: static;
-    }
-
-    .form-grid-2, .articles-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .main-nav ul {
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-link {
-        font-size: 0.8rem;
-    }
-
-    .card-section {
-        padding: 1.25rem;
-    }
-
-    .profile-header-avatar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .form-fieldset {
-        padding: 1rem 0.85rem;
-    }
-
-    .form-actions {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
+.btn-blade:hover {
+    background-color: var(--sun-red);
+    border-color: var(--sun-red);
+    color: var(--canvas-white);
+    box-shadow: var(--shadow-solid);
+    transform: translateY(-3px);
 }
