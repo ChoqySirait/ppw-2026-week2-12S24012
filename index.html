@@ -3,251 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Choqy Pananda Sirait</title>
-    <!-- Google Fonts untuk Tipografi Modern -->
+    <title>Choqy P. Sirait | Premium Workspace</title>
+    
+    <!-- Bootstrap 5.3 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Tipografi Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Ambient Background Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
 
-    <!-- Header & Navigasi Utama -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <span class="logo-text">Portofolio<span>.</span></span>
-            </div>
-            <nav class="main-nav" aria-label="Navigasi Utama">
-                <ul>
-                    <li><a href="#identitas" class="nav-link">Identitas</a></li>
-                    <li><a href="#tentang" class="nav-link">Tentang</a></li>
-                    <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
-                    <li><a href="#layanan" class="nav-link nav-btn">Layanan</a></li>
+    <!-- NAVBAR PREMIUM GLASS -->
+    <nav class="navbar navbar-expand-lg fixed-top premium-nav py-3">
+        <div class="container-fluid max-w-custom">
+            <a class="navbar-brand fw-bold text-dark" href="#">
+                <span class="brand-icon"><i class="bi bi-layers-half"></i></span>
+                Choqy<span class="text-gradient">.Dev</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="bi bi-grid-3x3-gap-fill fs-3 text-primary"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto gap-2 gap-lg-4 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#identitas">Identity</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#portofolio">Showcase</a></li>
+                    <li class="nav-item mt-2 mt-lg-0"><a class="btn btn-premium px-4" href="#layanan">Hire Me <i class="bi bi-arrow-right ms-1"></i></a></li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Container Utama Dashboard (Layout 2 Kolom) -->
+    <!-- MAIN DASHBOARD -->
     <div class="dashboard-wrapper">
         
-        <!-- KOLOM KIRI: Profil & Informasi Kontak (Sticky Sidebar) -->
+        <!-- KOLOM KIRI: STICKY SIDEBAR (Bento Style) -->
         <aside class="left-sidebar">
-            <!-- Section Identitas Diri -->
-            <section id="identitas" class="card-section profile-card">
-                <div class="profile-header-avatar">
-                    <img src="foto-profile.jpg" alt="Foto Profil Choqy Pananda Sirait" class="avatar-img">
-                    <div class="badge-status">
-                        <span class="pulse-dot"></span> Available for Projects
+            <div class="glass-card profile-bento mb-4">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="avatar-wrapper">
+                        <img src="foto-profile.jpg" alt="Choqy Pananda" class="avatar-img">
+                        <div class="status-indicator" title="Available for Hire">
+                            <span class="pulse-ring"></span>
+                            <span class="pulse-core"></span>
+                        </div>
+                    </div>
+                    <a href="#layanan" class="badge-premium text-decoration-none">Open to Work</a>
+                </div>
+                
+                <h1 class="h3 fw-black mb-1">Choqy P. Sirait</h1>
+                <p class="role-text mb-4">Frontend Engineer & UI/UX Architect based in Indonesia.</p>
+                
+                <div class="social-dock mb-4">
+                    <a href="#" class="dock-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="dock-btn" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="#" class="dock-btn" title="Dribbble"><i class="bi bi-dribbble"></i></a>
+                    <a href="#" class="dock-btn" title="Email"><i class="bi bi-envelope-at-fill"></i></a>
+                </div>
+
+                <div class="separator-line mb-4"></div>
+
+                <h6 class="fw-bold mb-3 small text-uppercase tracking-wide">Core Stack</h6>
+                <div class="tech-stack-container">
+                    <span class="tech-pill"><i class="bi bi-filetype-html"></i> HTML5/CSS3</span>
+                    <span class="tech-pill"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                    <span class="tech-pill"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                    <span class="tech-pill"><i class="bi bi-palette"></i> Figma</span>
+                </div>
+            </div>
+
+            <div class="glass-card operational-bento">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Base of Operations</h6>
+                        <p class="small text-muted mb-0">IT Del, Sumatera Utara</p>
                     </div>
                 </div>
-                <h1 class="user-name">Choqy Pananda Sirait</h1>
-                <p class="user-bio">
-                    Saya adalah Mahasiswa Sistem Informasi Semester 5 Institut Teknologi Del Pengembang antarmuka web dengan antusiasme tinggi pada rekayasa perangkat lunak dan strategi bisnis digital. Berfokus pada pembangunan produk web yang estetik, efisien, dan berdampak nyata.
-                </p>
-                <!-- Tooltip CSS Kustom ditambahkan via data-tooltip -->
-                <div class="skills-tags">
-                    <span class="tag" data-tooltip="Standar WCAG 2.2">HTML5 Semantic</span>
-                    <span class="tag" data-tooltip="Grid & Flexbox">Modern CSS3</span>
-                    <span class="tag" data-tooltip="Manajemen Proyek">Business Strategy</span>
-                    <span class="tag" data-tooltip="Prototyping Figma">UI/UX Design</span>
-                </div>
-            </section>
-
-            <!-- Section Aside Informasi Kontak & Operasional -->
-            <aside class="card-section info-card-aside">
-                <div class="aside-title">
-                    <h3>Operasional & Kontak</h3>
-                </div>
-                <div class="aside-body">
-                    <p><strong>Jam Kerja:</strong> Senin - Jumat (08.00 - 22.00 WIB)</p>
-                    <p><strong>Lokasi Kampus:</strong> Institut Teknologi Del, Laguboti, Toba , Sumatera Utara</p>
-                </div>
-            </aside>
+            </div>
         </aside>
 
-        <!-- KOLOM KANAN: Konten Utama -->
+        <!-- KOLOM KANAN: KONTEN UTAMA -->
         <main class="right-content">
 
-            <!-- Section 1: Profil Keahlian & Alur Kerja (id="tentang") -->
-            <section id="tentang" class="card-section">
-                <header class="section-header">
-                    <h2>Profil Keahlian & Alur Kerja</h2>
-                </header>
-                
-                <div class="articles-grid">
-                    <article class="info-article">
-                        <div class="article-header">
-                            <h3>Keahlian Utama (Unordered List)</h3>
-                        </div>
-                        <ul class="styled-list">
-                            <li>HTML5 Semantik & Aksesibilitas Web (WCAG 2.2)</li>
-                            <li>CSS Modern (Flexbox, CSS Grid, Custom Properties)</li>
-                            <li>Desain Antarmuka Responsif & Mobile-First</li>
-                            <li>Pengelolaan Versi Kode Git & GitHub Pages</li>
-                        </ul>
-                    </article>
-
-                    <article class="info-article">
-                        <div class="article-header">
-                            <h3>Alur Kerja Pengembangan (Ordered List)</h3>
-                        </div>
-                        <ol class="styled-list numeric">
-                            <li>Analisis Kebutuhan & Perancangan Tata Letak UI</li>
-                            <li>Penyusunan Arsitektur Kode HTML5 Semantik</li>
-                            <li>Styling Estetik & Layout Responsif CSS3</li>
-                            <li>Pengujian Aksesibilitas & Deployment Live</li>
-                        </ol>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Section 2: Tabel Portofolio (id="portofolio") -->
-            <section id="portofolio" class="card-section">
-                <header class="section-header">
-                    <h2>Tabel Proyek & Capaian</h2>
-                </header>
-                
-                <div class="table-wrapper">
-                    <table class="data-table">
-                        <caption>Tabel 1.1: Rekapitulasi Proyek Pengembangan Antarmuka Web</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Proyek / Kode MK</th>
-                                <th scope="col">Penyelesaian</th>
-                                <th scope="col">Teknologi</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">01</th>
-                                <td><strong>Praktikum Web Week 02</strong></td>
-                                <td><time datetime="2026-02-02">02 Feb 2026</time></td>
-                                <td><span class="tech-pill">HTML5</span> <span class="tech-pill">CSS3</span></td>
-                                <td><span class="badge badge-success"><span class="badge-dot"></span> Selesai</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">02</th>
-                                <td><strong>Perancangan UI/UX</strong></td>
-                                <td><time datetime="2026-03-15">15 Mar 2026</time></td>
-                                <td><span class="tech-pill">Figma</span> <span class="tech-pill">Grid</span></td>
-                                <td><span class="badge badge-warning"><span class="badge-dot"></span> Dalam Proses</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">03</th>
-                                <td><strong>Sistem Informasi Kampus</strong></td>
-                                <td><time datetime="2026-04-10">10 Apr 2026</time></td>
-                                <td><span class="tech-pill">HTML/CSS</span> <span class="tech-pill">JS</span></td>
-                                <td><span class="badge badge-success"><span class="badge-dot"></span> Selesai</span></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4">Total Proyek Terdaftar & Terverifikasi</td>
-                                <td class="table-total">3 Proyek Utama</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Section 3: Formulir Layanan (id="layanan") -->
-            <section id="layanan" class="card-section">
-                <header class="section-header">
-                    <h2>Formulir Layanan Konsultasi</h2>
-                </header>
-
-                <form class="custom-form" action="#" method="POST">
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">1. Data Identitas Pemesan</legend>
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
-                                <input type="text" id="nama" name="nama" class="form-control" required placeholder="Masukkan nama lengkap Anda">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email<span class="req">*</span></label>
-                                <!-- Penambahan aria-describedby untuk aksesibilitas ekstra -->
-                                <input type="email" id="email" name="email" class="form-control" required placeholder="nama@domain.com" aria-describedby="email-help">
-                                <small id="email-help" class="form-text">Gunakan email aktif atau email kampus resmi.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="telepon" class="form-label">No. Telepon / WhatsApp <span class="req">*</span></label>
-                                <input type="tel" id="telepon" name="telepon" class="form-control" required placeholder="081234567890">
-                            </div>
-                            <div class="form-group">
-                                <label for="anggaran" class="form-label">Estimasi Anggaran (Rp) <span class="req">*</span></label>
-                                <input type="number" id="anggaran" name="anggaran" class="form-control" min="1" required placeholder="Contoh: 5000000">
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">2. Detail Spesifikasi Layanan</legend>
-                        <div class="form-group">
-                            <label for="kategori-layanan" class="form-label">Kategori Layanan Utama</label>
-                            <select id="kategori-layanan" name="kategori-layanan" class="form-control">
-                                <option value="frontend">Frontend Web Development & Slicing</option>
-                                <option value="uiux">Desain UI/UX Prototyping (Figma)</option>
-                                <option value="audit">Audit Aksesibilitas Web (WCAG Compliance)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <span class="form-label">Prioritas Pengerjaan:</span>
-                                <div class="radio-stack">
-                                    <label for="prioritas-normal" class="option-label">
-                                        <input type="radio" id="prioritas-normal" name="prioritas" value="normal" checked> Normal (7-14 Hari)
-                                    </label>
-                                    <label for="prioritas-tinggi" class="option-label">
-                                        <input type="radio" id="prioritas-tinggi" name="prioritas" value="tinggi"> Express (&lt; 5 Hari)
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="form-label">Fitur Tambahan:</span>
-                                <div class="checkbox-stack">
-                                    <label for="fitur-responsive" class="option-label">
-                                        <input type="checkbox" id="fitur-responsive" name="fitur[]" value="responsive" checked> Mobile Responsif
-                                    </label>
-                                    <label for="fitur-seo" class="option-label">
-                                        <input type="checkbox" id="fitur-seo" name="fitur[]" value="seo"> Optimasi SEO Semantik
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pesan" class="form-label">Deskripsi Permintaan <span class="req">*</span></label>
-                            <textarea id="pesan" name="pesan" class="form-control" rows="3" required placeholder="Jelaskan rincian kebutuhan proyek Anda..."></textarea>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">3. Jadwal Sesi Konsultasi</legend>
-                        <div class="form-group">
-                            <label for="tanggal-konsultasi" class="form-label">Tanggal Pelaksanaan Konsultasi <span class="req">*</span></label>
-                            <input type="date" id="tanggal-konsultasi" name="tanggal-konsultasi" class="form-control" required>
-                        </div>
-                    </fieldset>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Kirim Permintaan</button>
-                        <button type="reset" class="btn btn-secondary">Reset Formulir</button>
+            <!-- BAGIAN PORTOFOLIO (Premium Cards) -->
+            <section id="portofolio" class="mb-5 section-offset">
+                <div class="d-flex align-items-end justify-content-between mb-4">
+                    <div>
+                        <span class="section-subtitle">ARSIP KARYA</span>
+                        <h2 class="display-6 fw-black mb-0">Featured Projects</h2>
                     </div>
-                </form>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <!-- Project 1 -->
+                    <div class="col">
+                        <div class="glass-card project-card h-100">
+                            <div class="card-glow"></div>
+                            <div class="project-content">
+                                <div class="project-icon mb-3"><i class="bi bi-laptop"></i></div>
+                                <span class="project-category">Web Development</span>
+                                <h5 class="fw-bold mt-2 mb-3">Portofolio Praktikum</h5>
+                                <p class="text-muted small mb-4">Antarmuka web dengan sistem tata letak grid tingkat lanjut, form aksesibel, dan styling modern.</p>
+                                <button class="btn btn-outline-premium w-100" data-bs-toggle="modal" data-bs-target="#modalProject">
+                                    Lihat Detail <i class="bi bi-box-arrow-up-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="col">
+                        <div class="glass-card project-card h-100">
+                            <div class="card-glow"></div>
+                            <div class="project-content">
+                                <div class="project-icon mb-3"><i class="bi bi-phone"></i></div>
+                                <span class="project-category">UI/UX Design</span>
+                                <h5 class="fw-bold mt-2 mb-3">Triporia Travel App</h5>
+                                <p class="text-muted small mb-4">Perancangan prototipe interaktif resolusi tinggi untuk aplikasi ekosistem pariwisata Toba.</p>
+                                <button class="btn btn-outline-premium w-100" data-bs-toggle="modal" data-bs-target="#modalProject">
+                                    Lihat Detail <i class="bi bi-box-arrow-up-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col">
+                        <div class="glass-card project-card h-100">
+                            <div class="project-content">
+                                <div class="project-icon text-muted mb-3"><i class="bi bi-cup-hot"></i></div>
+                                <span class="project-category text-muted">Backend Architecture</span>
+                                <h5 class="fw-bold mt-2 mb-3">Ada Halomo System</h5>
+                                <p class="text-muted small mb-4">Sistem Point of Sales desktop berbasis Java OOP dengan integrasi database SQL tingkat lanjut.</p>
+                                <button class="btn btn-locked w-100" disabled>
+                                    <i class="bi bi-lock-fill me-2"></i> In Development
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="col">
+                        <div class="glass-card project-card h-100">
+                            <div class="project-content">
+                                <div class="project-icon text-muted mb-3"><i class="bi bi-database-check"></i></div>
+                                <span class="project-category text-muted">Data Engineering</span>
+                                <h5 class="fw-bold mt-2 mb-3">Advanced SQL Lab</h5>
+                                <p class="text-muted small mb-4">Arsitektur Trigger (INSTEAD OF) dan pembuatan Stored Procedure untuk optimasi basis data.</p>
+                                <button class="btn btn-locked w-100" disabled>
+                                    <i class="bi bi-lock-fill me-2"></i> In Development
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BAGIAN FORMULIR (SaaS Style Form) -->
+            <section id="layanan" class="mb-5 section-offset">
+                <div class="glass-card form-bento p-4 p-lg-5">
+                    <span class="section-subtitle">KOLABORASI</span>
+                    <h2 class="h2 fw-black mb-2">Mari Bangun Sesuatu.</h2>
+                    <p class="text-muted mb-5">Jelaskan kebutuhan Anda secara spesifik agar saya dapat mengestimasi arsitektur dan linimasa proyek.</p>
+                    
+                    <form class="needs-validation custom-form-ui" novalidate>
+                        
+                        <div class="form-section-title">01. Identitas Klien</div>
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" required>
+                                    <label for="nama">Nama Lengkap / Instansi</label>
+                                    <div class="invalid-feedback">Wajib diisi.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required aria-describedby="emailHelp">
+                                    <label for="email">Email Resmi</label>
+                                    <div class="invalid-feedback">Format email salah.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="tel" class="form-control" id="telepon" placeholder="Nomor Telepon" required>
+                                    <label for="telepon">Nomor WhatsApp / Kontak</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="number" class="form-control" id="anggaran" placeholder="Anggaran" min="1" required>
+                                    <label for="anggaran">Estimasi Anggaran (Rp)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">02. Parameter Proyek</div>
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-12">
+                                <div class="form-floating premium-floating">
+                                    <select class="form-select fw-bold text-dark" id="kategori" required>
+                                        <option value="" selected disabled>-- Tentukan Ruang Lingkup --</option>
+                                        <option value="ui">UI/UX Research & Design</option>
+                                        <option value="web">Full Frontend Web Development</option>
+                                    </select>
+                                    <label for="kategori">Kategori Utama</label>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom Checkbox Premium -->
+                            <div class="col-12 mt-2">
+                                <label class="fw-bold small text-dark mb-3 d-block">Fitur Ekstra yang Dibutuhkan:</label>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <label class="premium-checkbox">
+                                        <input type="checkbox" name="fitur[]" value="responsive" checked>
+                                        <span class="checkbox-box"></span>
+                                        Mobile Responsif Terpadu
+                                    </label>
+                                    <label class="premium-checkbox">
+                                        <input type="checkbox" name="fitur[]" value="seo">
+                                        <span class="checkbox-box"></span>
+                                        Optimasi Struktur SEO
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <div class="form-floating premium-floating">
+                                    <textarea class="form-control custom-textarea" placeholder="Pesan" id="pesan" style="height: 140px" required></textarea>
+                                    <label for="pesan">Deskripsi Detail Kebutuhan Klien...</label>
+                                    <div class="invalid-feedback">Jelaskan proyek Anda secara singkat.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-premium w-100 py-3 mt-2" type="submit">
+                            Kirim Proposal Kolaborasi <i class="bi bi-send-fill ms-2"></i>
+                        </button>
+                    </form>
+                </div>
             </section>
         </main>
     </div>
 
-    <!-- Footer Semantik -->
-    <footer class="site-footer">
-        <p>&copy; 2026 Portofolio — Disusun oleh <strong>Choqy Pananda Sirait</strong></p>
+    <!-- MODAL UNIVERSAL -->
+    <div class="modal fade" id="modalProject" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal border-0">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-black h4">Detail Proyek</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <p class="text-muted">Desain dirancang sepenuhnya fungsional menggunakan arsitektur kode modern. Menitikberatkan pada kebersihan kode, kecepatan muat, dan pengalaman visual pengguna tingkat atas.</p>
+                    
+                    <h6 class="fw-bold mt-4 mb-3 small text-uppercase">Teknologi Terapan</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-pill bg-light text-dark"><i class="bi bi-code-slash"></i> HTML5 Semantik</span>
+                        <span class="tech-pill bg-light text-dark"><i class="bi bi-bootstrap"></i> CSS Framework</span>
+                        <span class="tech-pill bg-light text-dark"><i class="bi bi-universal-access"></i> WCAG 2.2</span>
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-outline-dark rounded-3 px-4 w-100" data-bs-dismiss="modal">Tutup Dokumen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-5">
+        <p class="mb-0 text-muted small fw-semibold tracking-wide">&copy; 2026 CHOQY PANANDA SIRAIT. ARCHITECTED WITH CARE.</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 </html>
