@@ -37,7 +37,7 @@
             <!-- Section Identitas Diri -->
             <section id="identitas" class="card-section profile-card">
                 <div class="profile-header-avatar">
-                    <img src="foto-profile.png" alt="Foto Profil Choqy Pananda Sirait" class="avatar-img">
+                    <img src="foto-profile.jpg" alt="Foto Profil Choqy Pananda Sirait" class="avatar-img">
                     <div class="badge-status">
                         <span class="pulse-dot"></span> Available for Projects
                     </div>
@@ -46,11 +46,12 @@
                 <p class="user-bio">
                     Saya adalah Mahasiswa Sistem Informasi Semester 5 Institut Teknologi Del Pengembang antarmuka web dengan antusiasme tinggi pada rekayasa perangkat lunak dan strategi bisnis digital. Berfokus pada pembangunan produk web yang estetik, efisien, dan berdampak nyata.
                 </p>
+                <!-- Tooltip CSS Kustom ditambahkan via data-tooltip -->
                 <div class="skills-tags">
-                    <span class="tag">HTML5 Semantic</span>
-                    <span class="tag">Modern CSS3</span>
-                    <span class="tag">Business Strategy</span>
-                    <span class="tag">UI/UX Design</span>
+                    <span class="tag" data-tooltip="Standar WCAG 2.2">HTML5 Semantic</span>
+                    <span class="tag" data-tooltip="Grid & Flexbox">Modern CSS3</span>
+                    <span class="tag" data-tooltip="Manajemen Proyek">Business Strategy</span>
+                    <span class="tag" data-tooltip="Prototyping Figma">UI/UX Design</span>
                 </div>
             </section>
 
@@ -169,7 +170,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">Email<span class="req">*</span></label>
-                                <input type="email" id="email" name="email" class="form-control" required placeholder="nama@domain.com">
+                                <!-- Penambahan aria-describedby untuk aksesibilitas ekstra -->
+                                <input type="email" id="email" name="email" class="form-control" required placeholder="nama@domain.com" aria-describedby="email-help">
+                                <small id="email-help" class="form-text">Gunakan email aktif atau email kampus resmi.</small>
                             </div>
                             <div class="form-group">
                                 <label for="telepon" class="form-label">No. Telepon / WhatsApp <span class="req">*</span></label>
@@ -177,7 +180,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="anggaran" class="form-label">Estimasi Anggaran (Rp) <span class="req">*</span></label>
-                                <input type="number" id="anggaran" name="anggaran" class="form-control" min="1" max="100" required placeholder="Contoh: 5">
+                                <input type="number" id="anggaran" name="anggaran" class="form-control" min="1" required placeholder="Contoh: 5000000">
                             </div>
                         </div>
                     </fieldset>

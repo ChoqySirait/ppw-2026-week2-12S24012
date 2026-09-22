@@ -234,6 +234,7 @@ body {
     line-height: 1.7;
 }
 
+/* Styling CSS Tooltip (Tanpa JavaScript) */
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -249,11 +250,29 @@ body {
     border-radius: 6px;
     border: 1px solid #bfdbfe;
     transition: var(--transition-smooth);
+    position: relative; /* Untuk Tooltip */
 }
 
 .tag:hover {
     background: var(--accent-primary);
     color: #ffffff;
+}
+
+.tag:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-dark);
+    color: #fff;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: var(--shadow-soft);
+    z-index: 10;
 }
 
 .info-card-aside {
@@ -416,7 +435,7 @@ body {
 }
 
 /* ==========================================================================
-   6. FORMULIR AKSESIBEL (WCAG STANDARDS)
+   6. FORMULIR AKSESIBEL (WCAG STANDARDS) & VISUAL VALIDATION
    ========================================================================== */
 .custom-form {
     display: flex;
@@ -461,6 +480,11 @@ body {
     color: var(--text-dark);
 }
 
+.form-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
 .req { color: #ef4444; }
 
 /* Styling Input Premium */
@@ -483,9 +507,24 @@ body {
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
+/* CSS Native Visual Validation (Peningkatan Ekstra) */
+.form-control:not(:placeholder-shown):valid {
+    border-color: var(--accent-emerald);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2310b981"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
+}
+
+.form-control:not(:placeholder-shown):invalid {
+    border-color: #ef4444;
+}
+
 textarea.form-control {
     resize: vertical;
     min-height: 100px;
+    background-image: none !important; /* Menghapus icon centang di textarea */
 }
 
 .radio-stack, .checkbox-stack {
