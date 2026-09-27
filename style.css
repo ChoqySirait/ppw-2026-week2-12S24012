@@ -1,14 +1,4 @@
-/* ==========================================================================
-   1. RESET & VARIABLES (:root)
-   ========================================================================== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #f8fafc; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-
+/*  CSS Variables (:root) - Minimal 6 Variabel Global */
 :root {
     --primary-brand: #2563eb;
     --primary-hover: #1d4ed8;
@@ -22,6 +12,9 @@ html { scroll-behavior: smooth; }
     --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
 }
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
 body.bg-surface {
     background-color: var(--surface-bg);
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -31,15 +24,12 @@ body.bg-surface {
     overflow-x: hidden;
 }
 
-/* Ambient Blobs */
+/* Background Ambient Orbs */
 .bg-orb { position: fixed; border-radius: 50%; filter: blur(120px); z-index: -1; opacity: 0.5; }
 .orb-1 { top: -10%; left: -5%; width: 450px; height: 450px; background: rgba(37, 99, 235, 0.18); }
 .orb-2 { bottom: -10%; right: -5%; width: 550px; height: 550px; background: rgba(14, 165, 233, 0.12); }
 
-
-/* ==========================================================================
-   2. STICKY NAVBAR & GLASS
-   ========================================================================== */
+/* Sticky Navbar & Brand Styling */
 .premium-nav {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
@@ -63,10 +53,7 @@ body.bg-surface {
     -webkit-text-fill-color: transparent;
 }
 
-
-/* ==========================================================================
-   3. BENTO GRID LAYOUT
-   ========================================================================== */
+/* Grid Dashboard Layout 2-Kolom */
 .dashboard-wrapper {
     max-width: 1400px;
     margin: 7rem auto 3rem auto;
@@ -91,10 +78,7 @@ body.bg-surface {
 
 .section-offset { scroll-margin-top: 6.8rem; }
 
-
-/* ==========================================================================
-   4. SIDEBAR PROFIL & SOSIAL DOCK
-   ========================================================================== */
+/* Sidebar Profile & Dock Components */
 .avatar-img {
     width: 76px; height: 76px; border-radius: 20px; object-fit: cover;
     border: 3px solid #fff; outline: 2px solid var(--primary-brand);
@@ -129,7 +113,7 @@ body.bg-surface {
 .tech-pill {
     background: #fff; border: 1px solid #cbd5e1; color: #0f172a;
     font-size: 0.75rem; font-weight: 700; padding: 0.4rem 0.75rem; border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); display: inline-block; white-space: nowrap;
 }
 
 .operational-bento { background: linear-gradient(145deg, #ffffff, #f8fafc); border-left: 5px solid var(--primary-brand); }
@@ -138,17 +122,12 @@ body.bg-surface {
     display: flex; align-items: center; justify-content: center; border-radius: 14px; font-size: 1.3rem;
 }
 
-
-/* ==========================================================================
-   5. KONTEN KANAN, KARTU KEAHLIAN INTERAKTIF & TABEL HOVER
-   ========================================================================== */
+/* Pseudo-elements (::before) & Advanced Selectors */
 .right-content { min-width: 0; display: flex; flex-direction: column; gap: 2rem; }
-
 .section-subtitle {
     font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-brand); display: block; margin-bottom: 0.3rem;
 }
 
-/* Pseudo-element ::before untuk Kartu Keahlian Utama & Alur Kerja (Modul 3 Lab 1) */
 .skill-card {
     position: relative; overflow: hidden; transition: all 0.35s ease; background: #fff; border: 1.5px solid #e2e8f0 !important; box-shadow: var(--shadow-card);
 }
@@ -165,18 +144,33 @@ body.bg-surface {
 
 .styled-list li { margin-bottom: 0.5rem; font-weight: 500; }
 
-/* Tabel Semantik dengan Hover Highlight */
-.table-wrapper-custom { border: 1.5px solid #e2e8f0; border-radius: 16px; overflow: hidden; background: #fff; }
-.data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
+/* TABEL MOBILE: Responsive Horizontal Touch Scroll */
+.table-wrapper-custom {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    background: #fff;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; /* Memaksa scroll horizontal jika tabel lebih lebar dari layar mobile */
+    -webkit-overflow-scrolling: touch; /* Efek smooth touch scroll pada layar iOS/Android */
+}
+
+.data-table {
+    width: 100%;
+    min-width: 600px; /* Lebar minimum agar konten kolom tabel tidak rapat dan memaksa scroll di mobile */
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
 .data-table caption { caption-side: top; text-align: left; padding: 1rem 1.25rem; font-weight: 700; color: #64748b; background: #f8fafc; border-bottom: 1.5px solid #e2e8f0; font-size: 0.85rem; }
-.data-table th, .data-table td { padding: 1rem 1.25rem; border-bottom: 1px solid #e2e8f0; transition: background 0.2s ease; }
+.data-table th, .data-table td { padding: 1rem 1.25rem; border-bottom: 1px solid #e2e8f0; transition: background 0.2s ease; white-space: nowrap; }
 .data-table thead th { background: #f8fafc; color: #475569; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
-/* Dynamic Hover Row Highlight */
 .data-table tbody tr:hover td, .data-table tbody tr:hover th { background-color: #f1f5f9; }
 .table-total { color: var(--primary-brand); font-weight: 800; }
 
-/* Pseudo-element ::before untuk Kartu Proyek */
+/* Cards & Buttons */
 .project-card {
     position: relative; overflow: hidden; transition: all 0.35s ease; background: #fff; border: 1.5px solid #e2e8f0 !important; box-shadow: var(--shadow-card);
 }
@@ -193,10 +187,7 @@ body.bg-surface {
 }
 .btn-outline-premium:hover { border-color: var(--primary-brand); background: var(--primary-brand); color: #fff; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
 
-
-/* ==========================================================================
-   6. FORMULIR INTERAKTIF
-   ========================================================================== */
+/* Floating Labels & Input Custom Checkbox */
 .form-fieldset { background: #f8fafc; border: 1.5px solid #cbd5e1 !important; }
 .form-legend { background: #ffffff; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
 
@@ -228,10 +219,7 @@ body.bg-surface {
 }
 .btn-premium:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4); color: #fff; }
 
-
-/* ==========================================================================
-   7. MODAL DIALOG & RESPONSIF
-   ========================================================================== */
+/* Modals & Media Queries Responsif */
 .glass-modal {
     background: rgba(255, 255, 255, 0.98); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid #fff; box-shadow: var(--shadow-heavy);
 }
