@@ -28,8 +28,12 @@ Proyek ini direfaktor dari basis kode Tugas Minggu 02 menjadi antarmuka berstand
 | **Arsitektur CSS** | CSS murni terpisah | Custom CSS Overrides dengan CSS Variables (`:root`) & Micro-interactions (`::before`) |
 
 ---
+Git
+<img width="959" height="599" alt="Screenshot 2026-09-27 102320" src="https://github.com/user-attachments/assets/c1d1aa6c-bd0d-4fb3-807d-28bbf7aabb69" />
+---
 
-## 🛠️ Fitur Utama & Keunggulan Teknis Minggu 3
+---
+## 🛠️ Fitur Utama & Keunggulan Teknis
 
 ### 1. Integrasi Framework & Semantik HTML5
 - **Bootstrap 5.3.3 & Icons CDN**: Memanfaatkan pustaka visual kontemporer dan ikonografi tanpa merusak struktur semantik murni HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`).
