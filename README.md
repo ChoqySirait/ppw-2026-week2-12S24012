@@ -31,6 +31,15 @@ Proyek ini direfaktor dari basis kode Tugas Minggu 02 menjadi antarmuka berstand
 Git
 <img width="959" height="599" alt="Screenshot 2026-09-27 102320" src="https://github.com/user-attachments/assets/c1d1aa6c-bd0d-4fb3-807d-28bbf7aabb69" />
 ---
+Web
+<img width="959" height="535" alt="Screenshot 2026-09-27 103643" src="https://github.com/user-attachments/assets/b885e67f-1425-4013-a3cc-eeabe8842993" />
+
+<img width="959" height="534" alt="Screenshot 2026-09-27 103658" src="https://github.com/user-attachments/assets/106d8a85-0d62-455a-a765-8e6170cc3e16" />
+---
+Mobile
+<img width="959" height="537" alt="Screenshot 2026-09-27 103708" src="https://github.com/user-attachments/assets/a23a76a6-70c9-40ff-9b61-4faf9a3e022f" />
+
+<img width="959" height="532" alt="Screenshot 2026-09-27 103724" src="https://github.com/user-attachments/assets/1fee0f0f-d8ac-4680-80ee-23e3861e8dc1" />
 
 ---
 ## 🛠️ Fitur Utama & Keunggulan Teknis
