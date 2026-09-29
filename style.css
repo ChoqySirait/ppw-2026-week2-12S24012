@@ -1,4 +1,4 @@
-/*  CSS Variables (:root) - Minimal 6 Variabel Global */
+/*  CSS Variables (:root) */
 :root {
     --primary-brand: #2563eb;
     --primary-hover: #1d4ed8;
@@ -208,7 +208,7 @@ body.bg-surface {
     width: 20px; height: 20px; border: 2px solid #94a3b8; border-radius: 6px; margin-right: 10px;
     display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;
 }
-.premium-checkbox:hover { border-color: var(--primary-brand); background: #eff6ff; }
+.premium-checkbox:hover { border-color: var(--pri mary-brand); background: #eff6ff; }
 .premium-checkbox input:checked ~ .checkbox-box { background: var(--primary-brand); border-color: var(--primary-brand); box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); }
 .premium-checkbox input:checked ~ .checkbox-box::after { content: '✔'; color: #fff; font-size: 0.7rem; }
 
