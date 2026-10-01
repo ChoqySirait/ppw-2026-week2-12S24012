@@ -104,7 +104,7 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 ---
 
 ## 📂 Struktur Repositori
-
+```
 .
 ├── css/
 │   └── style.css          # Stylesheet kustom (Glassmorphism, CSS Variables, & Bubble Glow)
@@ -118,5 +118,4 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 ├── foto-profile.jpg       # Berkas foto profil pengembang
 ├── index.html             # Shell Document HTML5 Semantik (Clean Container)
 └── README.md              # Dokumentasi resmi repositori & spesifikasi arsitektur
-
----
+```
