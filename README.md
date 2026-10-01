@@ -64,7 +64,7 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 ---
 
-🛠️ Fitur Utama & Keunggulan Teknis
+## 🛠️ Fitur Utama & Keunggulan Teknis
 1. Decoupled Multi-Tier & Client-Side Rendering (CSR)
 - Data Tier (data/): Menyimpan data mentah JSON (profile.json, projects.json, services.json).
 - Service Tier (js/api-service.js): Menangani data retrieval asinkron dan sanitasi input.
@@ -91,7 +91,7 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 ---
 
-📸 Dokumentasi Antarmuka (Screenshots)
+## 📸 Dokumentasi Antarmuka (Screenshots)
 
 * **Tampilan Git Commit & History**
 
@@ -100,3 +100,23 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 
 * **Tampilan Mobile Responsive & Collapsible Profile**
+
+---
+
+## 📂 Struktur Repositori
+
+.
+├── css/
+│   └── style.css          # Stylesheet kustom (Glassmorphism, CSS Variables, & Bubble Glow)
+├── data/
+│   ├── profile.json       # Mock API Data Profil & Bio
+│   ├── projects.json      # Mock API Data Katalog Proyek
+│   └── services.json      # Mock API Data Layanan & Keahlian
+├── js/
+│   ├── api-service.js     # Service Layer (Fetch API Provider & DOM XSS Sanitizer)
+│   └── app.js             # Presenter Layer (CSR Engine, State Handling, & Events)
+├── foto-profile.jpg       # Berkas foto profil pengembang
+├── index.html             # Shell Document HTML5 Semantik (Clean Container)
+└── README.md              # Dokumentasi resmi repositori & spesifikasi arsitektur
+
+---
