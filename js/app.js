@@ -1,5 +1,8 @@
 /**
- * Clean Portfolio App Presenter Engine
+ * @file app.js
+ * @description Presenter Engine untuk Client-Side Rendering (CSR), Event Handling, & UI State Handling
+ * @author Choqy Pananda Sirait (12S24012)
+ * @course Pemrograman dan Pengujian Web - IT Del
  */
 class App {
     constructor() {
@@ -18,7 +21,23 @@ class App {
         this.setupEventListeners();
         this.setupCollapsibleSidebarEngine();
         this.setupNavScrollspy();
+        this.renderLoadingStates(); // Tampilkan loading spinner sebelum data fetched
         await this.loadAllData();
+    }
+
+    renderLoadingStates() {
+        const loadingHTML = `
+            <div class="col-12 text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Memuat data...</span>
+                </div>
+                <p class="small text-muted mt-2">Sinkronisasi data JSON...</p>
+            </div>
+        `;
+        const projContainer = document.getElementById('projectsContainer');
+        const srvContainer = document.getElementById('servicesContainer');
+        if (projContainer) projContainer.innerHTML = loadingHTML;
+        if (srvContainer) srvContainer.innerHTML = loadingHTML;
     }
 
     setupCollapsibleSidebarEngine() {
@@ -64,7 +83,26 @@ class App {
 
         } catch (error) {
             console.error('[App Init Error]:', error);
+            this.renderErrorState('Gagal memuat data dari API/JSON. Pastikan dijalankan melalui web server (Live Server).');
         }
+    }
+
+    renderErrorState(message) {
+        const errorHTML = `
+            <div class="col-12">
+                <div class="alert alert-danger d-flex align-items-center rounded-4 shadow-sm" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+                    <div>
+                        <strong>Terjadi Kesalahan!</strong>
+                        <div class="small">${ApiService.sanitizeHTML(message)}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+        const projContainer = document.getElementById('projectsContainer');
+        const srvContainer = document.getElementById('servicesContainer');
+        if (projContainer) projContainer.innerHTML = errorHTML;
+        if (srvContainer) srvContainer.innerHTML = errorHTML;
     }
 
     setupNavScrollspy() {
@@ -119,7 +157,6 @@ class App {
         `).join('');
     }
 
-    // Render Proyek dalam Grid 3-Kolom (Atau 2-kolom pada layar medium)
     renderProjects() {
         const container = document.getElementById('projectsContainer');
         if (!container) return;
@@ -128,6 +165,11 @@ class App {
 
         if (this.state.activeCategory !== 'all') {
             filtered = filtered.filter(p => p.category === this.state.activeCategory);
+        }
+
+        if (filtered.length === 0) {
+            container.innerHTML = `<div class="col-12 text-center text-muted py-4 small">Tidak ada proyek dalam kategori ini.</div>`;
+            return;
         }
 
         container.innerHTML = filtered.map(proj => `
@@ -149,7 +191,6 @@ class App {
         `).join('');
     }
 
-    // Render Spesialisasi Layanan tanpa Harga dan tanpa Tombol Pesan
     renderServices() {
         const container = document.getElementById('servicesContainer');
         if (!container) return;
