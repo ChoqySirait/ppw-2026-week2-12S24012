@@ -1,9 +1,9 @@
-# ppw-2026-week3-12S24012
-# 🌐 Refactored Accessible Portfolio & Service Dashboard (Bootstrap 5.3)
+# ppw-2026-week4-12S24012
+# 🌐 Decoupled Multi-Tier Architecture & Client-Side Rendering (CSR) Portfolio Dashboard
 
-Repositori ini berisi berkas kode sumber untuk **Tugas Mandiri Minggu 03: Modernisasi & Refactoring Personal Portfolio & Service Portal Berbasis CSS Framework Kontemporer (Bootstrap 5) dan Advanced Custom CSS** pada mata kuliah **Pemrograman dan Pengujian Aplikasi Web (12S3101)** — **Institut Teknologi Del**.
+Repositori ini berisi berkas kode sumber untuk **Tugas Mandiri Minggu 04: Refactoring Arsitektur ke Decoupled Multi-Tier Architecture & Dynamic Client-Side Rendering (CSR) berbasis JSON Data Provider, Vanilla JavaScript (ES6+), dan Bootstrap 5.3** pada mata kuliah **Pemrograman dan Pengujian Aplikasi Web (12S3101)** — **Institut Teknologi Del**.
 
-Proyek ini direfaktor dari basis kode Tugas Minggu 02 menjadi antarmuka berstandar **Bootstrap 5.3+**, CSS Custom Properties (`:root`), serta komponen interaktif modern yang sepenuhnya responsif dan memenuhi standar **WCAG 2.2 Level AA**.
+Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **Decoupled Tier**, di mana dokumen `index.html` murni berfungsi sebagai *Shell Container* tanpa konten *hardcoded*, sementara seluruh data disinkronkan secara asinkron (`async/await fetch`) dari berkas JSON dan disanitasi dari ancaman **DOM XSS**.
 
 ---
 
@@ -17,55 +17,86 @@ Proyek ini direfaktor dari basis kode Tugas Minggu 02 menjadi antarmuka berstand
 
 ---
 
-## 📊 Tabel Komparasi (Sebelum vs Sesudah Integrasi Framework)
+## 📊 Tabel Komparasi Peningkatan (Minggu 03 vs Minggu 04)
 
-| Area Evaluasi | Minggu 02 (Sebelum Refactoring) | Minggu 03 (Sesudah Integrasi Bootstrap 5) |
+| Area Evaluasi | Minggu 03 (Framework Integration) | Minggu 04 (Decoupled Multi-Tier CSR) |
 | :--- | :--- | :--- |
-| **Sistem Grid & Layout** | CSS Grid & Flexbox murni kustom | Bootstrap 12-Column Responsive Grid (`row`, `col-md-6`) dipadukan dengan Bento Box Dashboard |
-| **Navigasi** | Header navigasi statis sederhana | Sticky Navbar (`sticky-top`) dengan Hamburger Toggle Collapse yang responsif di ponsel |
-| **Komponen Interaktif** | Kartu statis tanpa dialog | Bootstrap Cards interaktif yang terhubung ke **Modal Dialog Detail Proyek** |
-| **Formulir Layanan** | Kontrol input HTML5 bawaan | Modern Floating Labels (`.form-floating`), Input Groups berikon, & Validasi Visual |
-| **Arsitektur CSS** | CSS murni terpisah | Custom CSS Overrides dengan CSS Variables (`:root`) & Micro-interactions (`::before`) |
-
----
-Git
-<img width="959" height="599" alt="Screenshot 2026-09-27 102320" src="https://github.com/user-attachments/assets/c1d1aa6c-bd0d-4fb3-807d-28bbf7aabb69" />
----
-Web
-<img width="959" height="535" alt="Screenshot 2026-09-27 103643" src="https://github.com/user-attachments/assets/b885e67f-1425-4013-a3cc-eeabe8842993" />
-
-<img width="959" height="534" alt="Screenshot 2026-09-27 103658" src="https://github.com/user-attachments/assets/106d8a85-0d62-455a-a765-8e6170cc3e16" />
-
-Mobile
-<img width="959" height="537" alt="Screenshot 2026-09-27 103708" src="https://github.com/user-attachments/assets/a23a76a6-70c9-40ff-9b61-4faf9a3e022f" />
-
-<img width="959" height="532" alt="Screenshot 2026-09-27 103724" src="https://github.com/user-attachments/assets/1fee0f0f-d8ac-4680-80ee-23e3861e8dc1" />
-
----
-## 🛠️ Fitur Utama & Keunggulan Teknis
-
-### 1. Integrasi Framework & Semantik HTML5
-- **Bootstrap 5.3.3 & Icons CDN**: Memanfaatkan pustaka visual kontemporer dan ikonografi tanpa merusak struktur semantik murni HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`).
-
-### 2. Responsivitas Grid & Multi-Device
-- **12-Column Grid System**: Tampilan fleksibel multi-perangkat (ponsel, tablet, laptop) tanpa eror *horizontal overflow*.
-- **Touch-Responsive Data Table**: Pembungkus tabel dengan `overflow-x: auto` dan `min-width` khusus sehingga data tabular dapat digeser (*swipe*) dengan mulus di layar seluler.
-
-### 3. Komponen UI Interaktif & Floating Labels Form
-- **Bootstrap Modal Dialog**: Kartu proyek terhubung langsung dengan jendela pop-up detail karya.
-- **Form Floating Labels & Validasi Visual**: Pengalaman pengisian form modern dilengkapi indikator `.invalid-feedback` visual.
-
-### 4. Custom Overrides & CSS Variables (`:root`)
-- **Aturan `:root`**: Mendefinisikan lebih dari 6 variabel CSS global untuk konsistensi warna brand, sudut membulat, dan bayangan.
-- **Micro-Interactions**: Penataan gaya garis aksen mengembang pada kartu menggunakan pseudo-element `::before` tanpa penggunaan `!important` secara tidak terstruktur.
+| **Arsitektur Data & DOM** | Konten proyek & profil di-*hardcode* secara statis di dalam file `index.html` | **Decoupled Multi-Tier**: Konten dipisah ke berkas JSON (`data/*.json`) & disuntik dinamis via CSR |
+| **Pengambilan Data (Data Ingestion)** | Tidak ada pemanggilan API / Fetching | **Async Fetch API Engine** menggunakan `async/await` dan `Promise.all()` pada Service Tier |
+| **Keamanan Antarmuka (XSS Protection)** | Belum ada sanitasi variabel konten | **DOM XSS Sanitizer Engine** (`ApiService.sanitizeHTML()`) untuk mencegah serangan *script injection* |
+| **Katalog Proyek & Grid** | Kartu proyek statis 2-kolom dengan Search Bar | **Interactive Grid 3-Kolom** dengan *Category Filter Pills* instan tanpa *page reload* |
+| **Penyajian Keahlian (Tech Stack)** | Label *tech pill* biasa | **Hover Bubble Glow Effect**: Animasi pendaran biru menyala dan mengembang saat kursor diarahkan |
+| **Formulir Layanan** | Formulir berbasis paket & estimasi harga (*e-commerce style*) | **Formulir Kontak Kolaborasi Semantik** dengan pembungkus `<fieldset>` & `<legend>` sesuai WCAG 2.2 |
+| **Tata Letak Dashboard** | Sidebar profil statis | **Collapsible Floating Sidebar**: Sidebar dapat dilipat mulus dengan tombol pemicu *floating pill* |
 
 ---
 
-## 📂 Struktur Repositori
+## 🧩 Diagram Arsitektur Multi-Tier
 
 ```text
-.
-├── index.html         # Berkas dokumen utama HTML5 Semantik & Bootstrap 5
-├── style.css          # Stylesheet kustom eksternal (Overrides, Variables & Fixes)
-├── foto-profile.jpg   # Berkas foto profil pengembang
-└── README.md          # Dokumentasi resmi repositori & tabel komparasi
++-----------------------------------------------------------------------+
+|                       PRESENTATION / UI TIER                          |
+|  - index.html (Clean Shell Container tanpa konten hardcoded)          |
+|  - style.css (Glassmorphic UI, Grid 3-Kolom, Bubble Glow Effects)     |
++-----------------------------------------------------------------------+
+                                   ▲
+                                   │  Dynamic DOM Injection & Event Handling
+                                   ▼
++-----------------------------------------------------------------------+
+|                          PRESENTER ENGINE                             |
+|  - js/app.js (CSR State Manager, Category Filtering, UI States)       |
++-----------------------------------------------------------------------+
+                                   ▲
+                                   │  Async Fetch API & Sanitized Data
+                                   ▼
++-----------------------------------------------------------------------+
+|                            SERVICE TIER                               |
+|  - js/api-service.js (Async Data Ingestion & DOM XSS Sanitizer)       |
++-----------------------------------------------------------------------+
+                                   ▲
+                                   │  HTTP / Local File Ingestion
+                                   ▼
++-----------------------------------------------------------------------+
+|                             DATA TIER                                 |
+|  - data/profile.json  |  data/projects.json  |  data/services.json    |
++-----------------------------------------------------------------------+
+```
+
+---
+
+🛠️ Fitur Utama & Keunggulan Teknis
+1. Decoupled Multi-Tier & Client-Side Rendering (CSR)
+- Data Tier (data/): Menyimpan data mentah JSON (profile.json, projects.json, services.json).
+- Service Tier (js/api-service.js): Menangani data retrieval asinkron dan sanitasi input.
+- Presenter/UI Tier (js/app.js & index.html): Mengatur logika antarmuka, event listeners, serta merender komponen DOM secara dinamis.
+
+2. Penanganan State Antarmuka (UI States Handling)
+- Loading State: Menampilkan spinner loader Bootstrap saat data JSON sedang di-fetch.
+- Success State: Merender grid 3-kolom proyek, lini masa proyek, dan kartu layanan secara mulus.
+- Error State: Menampilkan pesan peringatan visual jika file JSON gagal dimuat atau server mengalami gangguan.
+
+3. Keamanan DOM XSS Sanitization
+- Setiap data teks dari JSON diproses melalui fungsi ApiService.sanitizeHTML() untuk memastikan tidak ada karakter HTML berbahaya yang dapat mengeksekusi script jahat di browser pengguna.
+
+4. Interactive Grid Showcase & Filter Pills
+- Penyajian katalog proyek dalam Grid 3-Kolom yang bersih dan responsif.
+- Filter Pills: Pengguna dapat memfilter proyek berdasarkan kategori secara instan tanpa perlu memuat ulang halaman.
+
+5. Hover Bubble Glow Effect pada Tech Pills
+- Seluruh badge teknologi (Tech Stack Pills) memiliki efek Bubble Glow—ketika kursor diarahkan, badge akan mengembang (scale), memancar warna biru menyala, dan memberikan respon visual yang interaktif.
+
+6. Form Kolaborasi Semantik & WCAG 2.2 AA Compliance
+- Formulir kontak dibungkus menggunakan tag semantik <fieldset> dan <legend> untuk memenuhi standar keterbacaan screen reader.
+- Dilengkapi validasi Bootstrap bawaan (.was-validated) dan notifikasi Toast asinkron.
+
+---
+
+📸 Dokumentasi Antarmuka (Screenshots)
+
+* **Tampilan Git Commit & History**
+
+
+* **Tampilan Desktop**
+
+
+* **Tampilan Mobile Responsive & Collapsible Profile**
