@@ -295,46 +295,52 @@
             <!-- Section 5: Kontak & Kolaborasi -->
             <section id="kontak" class="glass-card section-offset p-4 p-lg-5">
                 <div class="section-header-custom mb-4">
-                    <span class="section-subtitle">DISCUSSI & COLLABORATION</span>
+                    <span class="section-subtitle">DISCUSSION & COLLABORATION</span>
                     <h2 class="h4 fw-black mb-1 text-dark">Kontak & Diskusi Proyek</h2>
                     <p class="text-muted small mb-0">Kirimkan pesan atau pertanyaan untuk berdiskusi mengenai proyek web.</p>
                 </div>
 
                 <form id="contactForm" class="needs-validation custom-form-ui" novalidate>
-                    <div class="row g-3 mb-3">
-                        <div class="col-md-6">
-                            <div class="form-floating premium-floating">
-                                <input type="text" name="nama" class="form-control" id="contactNama" placeholder="Nama Lengkap" required>
-                                <label for="contactNama">Nama Lengkap *</label>
-                                <div class="invalid-feedback">Nama wajib diisi.</div>
+                    <fieldset class="border rounded-4 p-4 mb-4 bg-white shadow-sm">
+                        <legend class="float-none w-auto px-3 fs-6 fw-bold text-primary mb-3">
+                            <i class="bi bi-chat-quote-fill me-1"></i> Formulir Pesan Kolaborasi
+                        </legend>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="text" name="nama" class="form-control" id="contactNama" placeholder="Nama Lengkap" required>
+                                    <label for="contactNama">Nama Lengkap *</label>
+                                    <div class="invalid-feedback">Nama wajib diisi.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="email" name="email" class="form-control" id="contactEmail" placeholder="Email" required>
+                                    <label for="contactEmail">Alamat Email *</label>
+                                    <div class="invalid-feedback">Email valid wajib diisi.</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-floating premium-floating">
-                                <input type="email" name="email" class="form-control" id="contactEmail" placeholder="Email" required>
-                                <label for="contactEmail">Alamat Email *</label>
-                                <div class="invalid-feedback">Email valid wajib diisi.</div>
-                            </div>
+
+                        <div class="form-floating premium-floating mb-3">
+                            <select name="topik" class="form-select fw-semibold" id="contactTopik" required>
+                                <option value="" selected disabled>Pilih topik diskusi...</option>
+                                <option value="frontend">Frontend Slicing & Development</option>
+                                <option value="uiux">Desain UI/UX Prototyping</option>
+                                <option value="audit">Audit Aksesibilitas Web (WCAG)</option>
+                                <option value="umum">Pertanyaan Umum / Kolaborasi</option>
+                            </select>
+                            <label for="contactTopik">Topik Diskusi *</label>
+                            <div class="invalid-feedback">Silakan pilih topik diskusi.</div>
                         </div>
-                    </div>
 
-                    <div class="form-floating premium-floating mb-3">
-                        <select name="topik" class="form-select fw-semibold" id="contactTopik" required>
-                            <option value="" selected disabled>Pilih topik diskusi...</option>
-                            <option value="frontend">Frontend Slicing & Development</option>
-                            <option value="uiux">Desain UI/UX Prototyping</option>
-                            <option value="audit">Audit Aksesibilitas Web (WCAG)</option>
-                            <option value="umum">Pertanyaan Umum / Kolaborasi</option>
-                        </select>
-                        <label for="contactTopik">Topik Diskusi *</label>
-                        <div class="invalid-feedback">Silakan pilih topik diskusi.</div>
-                    </div>
-
-                    <div class="form-floating premium-floating mb-4">
-                        <textarea name="pesan" class="form-control custom-textarea" placeholder="Pesan" id="contactPesan" style="height: 120px" required></textarea>
-                        <label for="contactPesan">Pesan / Detail Diskusi *</label>
-                        <div class="invalid-feedback">Pesan wajib diisi.</div>
-                    </div>
+                        <div class="form-floating premium-floating">
+                            <textarea name="pesan" class="form-control custom-textarea" placeholder="Pesan" id="contactPesan" style="height: 120px" required></textarea>
+                            <label for="contactPesan">Pesan / Detail Diskusi *</label>
+                            <div class="invalid-feedback">Pesan wajib diisi.</div>
+                        </div>
+                    </fieldset>
 
                     <button class="btn btn-premium w-100 py-3 fw-bold shadow-sm" type="submit">
                         Kirim Pesan Diskusi <i class="bi bi-send-fill ms-2"></i>
