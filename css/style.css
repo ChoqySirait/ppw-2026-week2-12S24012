@@ -207,3 +207,31 @@ body.bg-surface {
     .dashboard-wrapper { padding: 0 0.85rem; margin-top: 5.5rem; }
     .glass-card { padding: 1.25rem !important; }
 }
+
+/* Media Query Responsif Mobile & Tablet (Fix Layout Squish Bug) */
+@media (max-width: 1024px) {
+    /* Paksa layout tetap 1 kolom penuh baik saat normal maupun saat terlipat */
+    .dashboard-wrapper,
+    .dashboard-wrapper.sidebar-collapsed { 
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem !important; 
+        margin-top: 6rem; 
+        padding: 0 1.25rem; 
+    }
+
+    .left-sidebar { 
+        position: static; 
+        width: 100%; 
+        transition: all 0.35s ease;
+    }
+
+    /* Tampilkan tombol panah lipat di kartu profil */
+    .btn-collapse-sidebar { 
+        display: flex !important; 
+    }
+    
+    /* Saat terlipat di HP: sembunyikan sidebar total dari alur grid */
+    .dashboard-wrapper.sidebar-collapsed .left-sidebar {
+        display: none !important;
+    }
+}
