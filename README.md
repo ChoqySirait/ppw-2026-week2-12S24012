@@ -31,6 +31,24 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 ---
 
+## C4-Container-Diagram
+
+<img width="1010" height="793" alt="c4-container-diagram" src="https://github.com/user-attachments/assets/819e10d2-9b9c-4377-a795-743b1158ce56" />
+
+---
+
+## 📊 Tabel Pengukuran Profiling DevTools
+<img width="959" height="568" alt="Screenshot 2026-10-03 143134" src="https://github.com/user-attachments/assets/192f4096-ba11-405d-bedd-3d901b3f78df" /> <img width="959" height="568" alt="Screenshot 2026-10-03 143155" src="https://github.com/user-attachments/assets/09836005-78bf-4f74-9dfc-9d8c4970176e" />
+
+| Parameter Pengukuran | Cold Load (Disable Cache) | Warm Load (Disk/Memory Cache) | Catatan Status |
+| :--- | :--- | :--- | :--- |
+| **Status HTTP Response** | 200 OK | **304 Not Modified / Cache** | Aset ter-cache sempurna |
+| **Total Transferred Size** | 1,545 kB (~1.5 MB) | **931 kB** | Hemat bandwidth ~600 kB |
+| **DOMContentLoaded** | 1.54 s | **815 ms** | Performa rendering CSR cepat |
+| **Total Load Time** | 1.63 s | **984 ms** | Di bawah 1 detik pada warm load |
+
+---
+
 ## 🧩 Diagram Arsitektur Multi-Tier
 
 ```text
@@ -117,8 +135,6 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 
 
-
- 
 ---
 
 ## 📂 Struktur Repositori
