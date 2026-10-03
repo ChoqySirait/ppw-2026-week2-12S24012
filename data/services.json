@@ -1,0 +1,41 @@
+[
+  {
+    "id": "srv-01",
+    "title": "Frontend Web Slicing & Development",
+    "icon": "bi-code-slash",
+    "description": "Konversi desain Figma ke kode HTML5 semantik & Bootstrap 5 yang responsif, cepat, dan bersih.",
+    "price": "Mulai Rp 1.500.000",
+    "features": [
+      "HTML5 Semantik & Bootstrap 5.3",
+      "Full Responsive Multi-Device",
+      "Optimasi LCP & Performance",
+      "Clean Code & Documented"
+    ]
+  },
+  {
+    "id": "srv-02",
+    "title": "UI/UX Prototyping & Design System",
+    "icon": "bi-palette",
+    "description": "Perancangan wireframe hingga prototype interaktif resolusi tinggi di Figma yang ramah pengguna.",
+    "price": "Mulai Rp 2.000.000",
+    "features": [
+      "User Flow & Wireframing",
+      "Design System & Components",
+      "Interactive Clickable Prototype",
+      "Usability Testing Ready"
+    ]
+  },
+  {
+    "id": "srv-03",
+    "title": "Audit WCAG 2.2 & Web Refactoring",
+    "icon": "bi-shield-check",
+    "description": "Peningkatan aksesibilitas web dan refactoring arsitektur ke Decoupled CSR modern.",
+    "price": "Mulai Rp 2.500.000",
+    "features": [
+      "Audit WCAG 2.2 Level AA",
+      "Refactoring ke Decoupled JSON CSR",
+      "Optimasi Focus Ring & Keyboard Nav",
+      "DOM XSS Input Sanitization"
+    ]
+  }
+]

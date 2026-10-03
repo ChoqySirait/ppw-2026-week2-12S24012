@@ -3,248 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Choqy Pananda Sirait</title>
-    <!-- Google Fonts untuk Tipografi Modern -->
+    <title>Portofolio Personal - Choqy Pananda Sirait</title>
+    
+    <!-- CDN Bootstrap 5.3 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts & Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-surface">
 
-    <!-- Header & Navigasi Utama -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <span class="logo-text">Portofolio<span>.</span></span>
+    <!-- Orbs Latar Belakang -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Floating Profile Pill saat Sidebar Terlipat -->
+    <button id="btnFloatingProfile" class="btn-floating-profile" title="Tampilkan Profil" style="display: none;">
+        <i class="bi bi-person-badge-fill fs-5"></i>
+        <span class="d-none d-md-inline fw-bold small">Profil Choqy</span>
+    </button>
+
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top premium-nav py-3">
+            <div class="container-fluid max-w-custom px-4">
+                <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="#">
+                    <span class="brand-icon"><i class="bi bi-code-slash"></i></span>
+                    CPS<span class="text-gradient"></span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-label="Toggle Navigasi">
+                    <i class="bi bi-grid-3x3-gap-fill fs-3 text-primary"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto gap-2 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link nav-scroll-link active" href="#tentang">Tentang</a></li>
+                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#sertifikasi">Sertifikasi</a></li>
+                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#portofolio">Portofolio</a></li>
+                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#layanan-list">Keahlian Utama</a></li>
+                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
             </div>
-            <nav class="main-nav" aria-label="Navigasi Utama">
-                <ul>
-                    <li><a href="#identitas" class="nav-link">Identitas</a></li>
-                    <li><a href="#tentang" class="nav-link">Tentang</a></li>
-                    <li><a href="#portofolio" class="nav-link">Portofolio</a></li>
-                    <li><a href="#layanan" class="nav-link nav-btn">Layanan</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <!-- Container Utama Dashboard (Layout 2 Kolom) -->
-    <div class="dashboard-wrapper">
+    <!-- Dashboard Layout -->
+    <div id="dashboardWrapper" class="dashboard-wrapper">
         
-        <!-- KOLOM KIRI: Profil & Informasi Kontak (Sticky Sidebar) -->
-        <aside class="left-sidebar">
-            <!-- Section Identitas Diri -->
-            <section id="identitas" class="card-section profile-card">
-                <div class="profile-header-avatar">
-                    <img src="foto-profile.jpg" alt="Foto Profil Choqy Pananda Sirait" class="avatar-img">
-                    <div class="badge-status">
-                        <span class="pulse-dot"></span> Available for Projects
+        <!-- Sidebar Kiri -->
+        <aside id="leftSidebar" class="left-sidebar">
+            <section id="identitas" class="glass-card profile-card mb-4 p-4 position-relative">
+                <button id="btnCollapseSidebar" class="btn-collapse-sidebar" title="Lipat Sidebar">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+
+                <div class="profile-header-avatar d-flex align-items-center justify-content-between mb-3">
+                    <div class="avatar-wrapper position-relative">
+                        <img src="foto-profile.jpg" alt="Choqy Pananda Sirait" class="avatar-img shadow">
+                        <div class="status-indicator">
+                            <span class="pulse-ring"></span>
+                            <span class="pulse-core"></span>
+                        </div>
                     </div>
+                    <span class="badge-premium">Open to Collaborate</span>
                 </div>
-                <h1 class="user-name">Choqy Pananda Sirait</h1>
-                <p class="user-bio">
-                    Saya adalah Mahasiswa Sistem Informasi Semester 5 Institut Teknologi Del Pengembang antarmuka web dengan antusiasme tinggi pada rekayasa perangkat lunak dan strategi bisnis digital. Berfokus pada pembangunan produk web yang estetik, efisien, dan berdampak nyata.
-                </p>
-                <div class="skills-tags">
-                    <span class="tag">HTML5 Semantic</span>
-                    <span class="tag">Modern CSS3</span>
-                    <span class="tag">Business Strategy</span>
-                    <span class="tag">UI/UX Design</span>
+                
+                <h1 id="profileName" class="h4 fw-black mb-1 text-dark">Choqy Pananda Sirait</h1>
+                <p class="role-text mb-3">Mahasiswa S1 Sistem Informasi <br><span class="text-primary fw-bold">Institut Teknologi Del</span></p>
+                <p id="profileBio" class="text-muted small mb-4">Pengembang antarmuka web yang berfokus pada rekayasa perangkat lunak semantik, performa tinggi, dan aksesibilitas web (WCAG 2.2 AA).</p>
+                
+                <div class="social-dock mb-4">
+                    <a href="https://www.linkedin.com/in/choqypanandasirait" target="_blank" class="dock-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/ChoqySirait" target="_blank" class="dock-btn" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="mailto:choqypenandasirait@gmail.com" class="dock-btn" title="Email"><i class="bi bi-envelope-at-fill"></i></a>
+                </div>
+
+                <div class="separator-line mb-3"></div>
+
+                <!-- Tech Stack Pills dengan Efek Gelembung Biru -->
+                <div id="profileSkills" class="skills-tags d-flex flex-wrap gap-2">
+                    <span class="tech-pill">HTML5 Semantic</span>
+                    <span class="tech-pill">Modern CSS3 & Bootstrap 5</span>
+                    <span class="tech-pill">JavaScript (ES6+)</span>
+                    <span class="tech-pill">Decoupled Architecture</span>
+                    <span class="tech-pill">Web Accessibility (WCAG)</span>
+                    <span class="tech-pill">UI/UX Design (Figma)</span>
                 </div>
             </section>
 
-            <!-- Section Aside Informasi Kontak & Operasional -->
-            <aside class="card-section info-card-aside">
-                <div class="aside-title">
-                    <h3>Operasional & Kontak</h3>
-                </div>
-                <div class="aside-body">
-                    <p><strong>Jam Kerja:</strong> Senin - Jumat (08.00 - 22.00 WIB)</p>
-                    <p><strong>Lokasi Kampus:</strong> Institut Teknologi Del, Laguboti, Toba , Sumatera Utara</p>
+            <aside class="glass-card operational-bento p-4">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <h2 class="h6 fw-bold mb-0 text-dark">Lokasi Kampus</h2>
+                        <p class="small text-muted mb-0">Institut Teknologi Del</p>
+                        <p class="small text-muted mb-0">Laguboti, Toba, Sumatera Utara</p>
+                    </div>
                 </div>
             </aside>
         </aside>
 
-        <!-- KOLOM KANAN: Konten Utama -->
-        <main class="right-content">
+        <!-- Area Konten Utama Kanan -->
+        <main id="rightContent" class="right-content">
 
-            <!-- Section 1: Profil Keahlian & Alur Kerja (id="tentang") -->
-            <section id="tentang" class="card-section">
-                <header class="section-header">
-                    <h2>Profil Keahlian & Alur Kerja</h2>
-                </header>
-                
-                <div class="articles-grid">
-                    <article class="info-article">
-                        <div class="article-header">
-                            <h3>Keahlian Utama (Unordered List)</h3>
-                        </div>
-                        <ul class="styled-list">
-                            <li>HTML5 Semantik & Aksesibilitas Web (WCAG 2.2)</li>
-                            <li>CSS Modern (Flexbox, CSS Grid, Custom Properties)</li>
-                            <li>Desain Antarmuka Responsif & Mobile-First</li>
-                            <li>Pengelolaan Versi Kode Git & GitHub Pages</li>
-                        </ul>
-                    </article>
-
-                    <article class="info-article">
-                        <div class="article-header">
-                            <h3>Alur Kerja Pengembangan (Ordered List)</h3>
-                        </div>
-                        <ol class="styled-list numeric">
-                            <li>Analisis Kebutuhan & Perancangan Tata Letak UI</li>
-                            <li>Penyusunan Arsitektur Kode HTML5 Semantik</li>
-                            <li>Styling Estetik & Layout Responsif CSS3</li>
-                            <li>Pengujian Aksesibilitas & Deployment Live</li>
-                        </ol>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Section 2: Tabel Portofolio (id="portofolio") -->
-            <section id="portofolio" class="card-section">
-                <header class="section-header">
-                    <h2>Tabel Proyek & Capaian</h2>
-                </header>
-                
-                <div class="table-wrapper">
-                    <table class="data-table">
-                        <caption>Tabel 1.1: Rekapitulasi Proyek Pengembangan Antarmuka Web</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Proyek / Kode MK</th>
-                                <th scope="col">Penyelesaian</th>
-                                <th scope="col">Teknologi</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">01</th>
-                                <td><strong>Praktikum Web Week 02</strong></td>
-                                <td><time datetime="2026-02-02">02 Feb 2026</time></td>
-                                <td><span class="tech-pill">HTML5</span> <span class="tech-pill">CSS3</span></td>
-                                <td><span class="badge badge-success"><span class="badge-dot"></span> Selesai</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">02</th>
-                                <td><strong>Perancangan UI/UX</strong></td>
-                                <td><time datetime="2026-03-15">15 Mar 2026</time></td>
-                                <td><span class="tech-pill">Figma</span> <span class="tech-pill">Grid</span></td>
-                                <td><span class="badge badge-warning"><span class="badge-dot"></span> Dalam Proses</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">03</th>
-                                <td><strong>Sistem Informasi Kampus</strong></td>
-                                <td><time datetime="2026-04-10">10 Apr 2026</time></td>
-                                <td><span class="tech-pill">HTML/CSS</span> <span class="tech-pill">JS</span></td>
-                                <td><span class="badge badge-success"><span class="badge-dot"></span> Selesai</span></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4">Total Proyek Terdaftar & Terverifikasi</td>
-                                <td class="table-total">3 Proyek Utama</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Section 3: Formulir Layanan (id="layanan") -->
-            <section id="layanan" class="card-section">
-                <header class="section-header">
-                    <h2>Formulir Layanan Konsultasi</h2>
-                </header>
-
-                <form class="custom-form" action="#" method="POST">
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">1. Data Identitas Pemesan</legend>
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
-                                <input type="text" id="nama" name="nama" class="form-control" required placeholder="Masukkan nama lengkap Anda">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email<span class="req">*</span></label>
-                                <input type="email" id="email" name="email" class="form-control" required placeholder="nama@domain.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="telepon" class="form-label">No. Telepon / WhatsApp <span class="req">*</span></label>
-                                <input type="tel" id="telepon" name="telepon" class="form-control" required placeholder="081234567890">
-                            </div>
-                            <div class="form-group">
-                                <label for="anggaran" class="form-label">Estimasi Anggaran (Rp) <span class="req">*</span></label>
-                                <input type="number" id="anggaran" name="anggaran" class="form-control" min="1" max="100" required placeholder="Contoh: 5">
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">2. Detail Spesifikasi Layanan</legend>
-                        <div class="form-group">
-                            <label for="kategori-layanan" class="form-label">Kategori Layanan Utama</label>
-                            <select id="kategori-layanan" name="kategori-layanan" class="form-control">
-                                <option value="frontend">Frontend Web Development & Slicing</option>
-                                <option value="uiux">Desain UI/UX Prototyping (Figma)</option>
-                                <option value="audit">Audit Aksesibilitas Web (WCAG Compliance)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <span class="form-label">Prioritas Pengerjaan:</span>
-                                <div class="radio-stack">
-                                    <label for="prioritas-normal" class="option-label">
-                                        <input type="radio" id="prioritas-normal" name="prioritas" value="normal" checked> Normal (7-14 Hari)
-                                    </label>
-                                    <label for="prioritas-tinggi" class="option-label">
-                                        <input type="radio" id="prioritas-tinggi" name="prioritas" value="tinggi"> Express (&lt; 5 Hari)
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="form-label">Fitur Tambahan:</span>
-                                <div class="checkbox-stack">
-                                    <label for="fitur-responsive" class="option-label">
-                                        <input type="checkbox" id="fitur-responsive" name="fitur[]" value="responsive" checked> Mobile Responsif
-                                    </label>
-                                    <label for="fitur-seo" class="option-label">
-                                        <input type="checkbox" id="fitur-seo" name="fitur[]" value="seo"> Optimasi SEO Semantik
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pesan" class="form-label">Deskripsi Permintaan <span class="req">*</span></label>
-                            <textarea id="pesan" name="pesan" class="form-control" rows="3" required placeholder="Jelaskan rincian kebutuhan proyek Anda..."></textarea>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">3. Jadwal Sesi Konsultasi</legend>
-                        <div class="form-group">
-                            <label for="tanggal-konsultasi" class="form-label">Tanggal Pelaksanaan Konsultasi <span class="req">*</span></label>
-                            <input type="date" id="tanggal-konsultasi" name="tanggal-konsultasi" class="form-control" required>
-                        </div>
-                    </fieldset>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Kirim Permintaan</button>
-                        <button type="reset" class="btn btn-secondary">Reset Formulir</button>
+            <!-- Hero Banner -->
+            <section class="glass-card hero-banner p-4 p-lg-5 mb-4 position-relative overflow-hidden">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 rounded-pill mb-3">
+                            <i class="bi bi-stars me-1"></i> Software Engineering & Web Development
+                        </span>
+                        <h2 class="display-6 fw-black text-dark mb-3">Portofolio Antarmuka Web & Rekayasa Perangkat Lunak</h2>
+                        <p class="text-muted small mb-0">Dikembangkan dengan arsitektur Decoupled Dynamic Client-Side Rendering (CSR), validasi form aman, dan standar aksesibilitas tinggi.</p>
                     </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="#portofolio" class="btn btn-premium px-4 py-3 fw-bold shadow">
+                            Lihat Karya Saya <i class="bi bi-arrow-down-short fs-5 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 1: Tentang -->
+            <section id="tentang" class="glass-card mb-4 section-offset p-4 p-lg-5">
+                <div class="section-header-custom mb-4">
+                    <span class="section-subtitle">ARSITEKTUR & METODOLOGI</span>
+                    <h2 class="h4 fw-black mb-1 text-dark">Profil Keahlian & Alur Kerja</h2>
+                    <p class="text-muted small mb-0">Pendekatan sistematis dalam perancangan web semantik, estetik, dan accessible.</p>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <article class="glass-card skill-card h-100 p-4 border position-relative overflow-hidden">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="card-icon-small"><i class="bi bi-list-stars text-primary"></i></div>
+                                <h3 class="h6 fw-bold text-dark mb-0">Keahlian Utama</h3>
+                            </div>
+                            <ul class="styled-list small text-muted ps-3 mb-0">
+                                <li>HTML5 Semantik & Aksesibilitas Web (WCAG 2.2)</li>
+                                <li>CSS Modern (Flexbox, CSS Grid, Custom Properties)</li>
+                                <li>Desain Antarmuka Responsif & Mobile-First</li>
+                                <li>Pengelolaan Versi Kode via Git & GitHub Pages</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6">
+                        <article class="glass-card skill-card h-100 p-4 border position-relative overflow-hidden">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="card-icon-small"><i class="bi bi-diagram-3 text-primary"></i></div>
+                                <h3 class="h6 fw-bold text-dark mb-0">Alur Kerja Sistematis</h3>
+                            </div>
+                            <ol class="styled-list numeric small text-muted ps-3 mb-0">
+                                <li>Analisis Kebutuhan & Perancangan Wireframe UI</li>
+                                <li>Penyusunan Arsitektur Kode HTML5 Semantik</li>
+                                <li>Styling Estetik & Responsive Layout dengan CSS3</li>
+                                <li>Pengujian Aksesibilitas, Validasi, & Deployment</li>
+                            </ol>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- SDLC Workflow Steps -->
+                <div class="workflow-timeline p-4 rounded-4 bg-white border shadow-sm">
+                    <h3 class="h6 fw-bold text-dark mb-3">Tahapan Pengembangan Web (SDLC)</h3>
+                    <div class="row g-3 text-center">
+                        <div class="col-3">
+                            <div class="step-item p-2">
+                                <span class="step-num">01</span>
+                                <span class="d-block small fw-bold text-dark mt-1">Design UI/UX</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="step-item p-2">
+                                <span class="step-num">02</span>
+                                <span class="d-block small fw-bold text-dark mt-1">Decoupled JSON</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="step-item p-2">
+                                <span class="step-num">03</span>
+                                <span class="d-block small fw-bold text-dark mt-1">Async CSR Engine</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="step-item p-2">
+                                <span class="step-num">04</span>
+                                <span class="d-block small fw-bold text-dark mt-1">Audit WCAG & Deploy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Sertifikasi -->
+            <section id="sertifikasi" class="glass-card mb-4 section-offset p-4 p-lg-5">
+                <div class="section-header-custom mb-4">
+                    <span class="section-subtitle">PENCAPAIAN & SERTIFIKASI</span>
+                    <h2 class="h4 fw-black mb-1 text-dark">Sertifikasi & Kompetensi</h2>
+                    <p class="text-muted small mb-0">Sertifikasi resmi dan modul pembelajaran terverifikasi.</p>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded-4 bg-white d-flex align-items-center gap-3 shadow-sm h-100">
+                            <div class="cert-icon-box bg-primary-subtle text-primary rounded-3 p-3">
+                                <i class="bi bi-patch-check-fill fs-3"></i>
+                            </div>
+                            <div>
+                                <span class="badge bg-success-subtle text-success fw-bold small mb-1">Dicoding Indonesia</span>
+                                <h3 class="h6 fw-bold text-dark mb-1">Dasar Pemrograman JavaScript</h3>
+                                <p class="small text-muted mb-0">Verifikasi Kelulusan & Dasar Logika Web</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded-4 bg-white d-flex align-items-center gap-3 shadow-sm h-100">
+                            <div class="cert-icon-box bg-info-subtle text-info rounded-3 p-3">
+                                <i class="bi bi-database-fill-check fs-3"></i>
+                            </div>
+                            <div>
+                                <span class="badge bg-primary-subtle text-primary fw-bold small mb-1">Praktikum IT Del</span>
+                                <h3 class="h6 fw-bold text-dark mb-1">Advanced SQL & Database Triggers</h3>
+                                <p class="small text-muted mb-0">Implementasi Trigger & Stored Procedure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Portofolio (Grid 3-Kolom Interaktif tanpa Search Bar) -->
+            <section id="portofolio" class="glass-card mb-4 section-offset p-4 p-lg-5">
+                <div class="section-header-custom mb-4">
+                    <span class="section-subtitle">SHOWCASE & JOURNEY</span>
+                    <h2 class="h4 fw-black mb-1 text-dark">Riwayat Proyek & Showcase Katalog</h2>
+                    <p class="text-muted small mb-0">Pengalaman pengerjaan proyek akademik dan antarmuka web.</p>
+                </div>
+
+                <!-- Timeline Proyek -->
+                <div class="timeline-card p-4 rounded-4 bg-white border mb-4 shadow-sm">
+                    <h3 class="h6 fw-bold text-dark mb-3"><i class="bi bi-clock-history me-2 text-primary"></i>Langkah Perjalanan Proyek Akademik</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item pb-3 border-start border-2 border-primary ps-3 position-relative ms-2">
+                            <div class="timeline-dot"></div>
+                            <span class="small text-primary fw-bold">Februari 2026</span>
+                            <h4 class="h6 fw-bold text-dark mb-1">Portofolio & Service Portal Web</h4>
+                            <p class="small text-muted mb-0">Pembangunan antarmuka web semantik berarsitektur Decoupled CSR & WCAG 2.2 AA.</p>
+                        </div>
+                        <div class="timeline-item pb-3 border-start border-2 border-primary ps-3 position-relative ms-2">
+                            <div class="timeline-dot"></div>
+                            <span class="small text-primary fw-bold">Maret 2026</span>
+                            <h4 class="h6 fw-bold text-dark mb-1">Triporia Travel UI/UX Design</h4>
+                            <p class="small text-muted mb-0">Perancangan prototipe aplikasi pariwisata Samosir & Toba berbasis Figma & Grid Layout.</p>
+                        </div>
+                        <div class="timeline-item pb-0 border-start border-2 border-primary ps-3 position-relative ms-2">
+                            <div class="timeline-dot"></div>
+                            <span class="small text-primary fw-bold">Mei 2026</span>
+                            <h4 class="h6 fw-bold text-dark mb-1">Ada Halomo Milkshake Java Application</h4>
+                            <p class="small text-muted mb-0">Aplikasi desktop audit dan penjualan menggunakan Java Object-Oriented Programming (OOP).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="h6 fw-bold text-dark mb-3">Katalog Proyek Interaktif</h3>
+
+                <!-- Filter Pills saja (Tanpa Search Input Bar) -->
+                <div id="categoryFilters" class="d-flex flex-wrap gap-2 mb-4"></div>
+
+                <!-- Container Grid Proyek Dinamis (CSR) -->
+                <div id="projectsContainer" class="row g-3"></div>
+            </section>
+
+            <!-- Section 4: Keahlian Utama & Spesialisasi (Tanpa Harga & Tanpa Tombol Pesan) -->
+            <section id="layanan-list" class="glass-card mb-4 section-offset p-4 p-lg-5">
+                <div class="section-header-custom mb-4">
+                    <span class="section-subtitle">KEAHLIAN UTAMA</span>
+                    <h2 class="h4 fw-black mb-1 text-dark">Layanan & Spesialisasi</h2>
+                    <p class="text-muted small mb-0">Fokus pengembangan antarmuka dan rekayasa web yang dapat disesuaikan.</p>
+                </div>
+
+                <div id="servicesContainer" class="row g-3"></div>
+            </section>
+
+            <!-- Section 5: Kontak & Kolaborasi -->
+            <section id="kontak" class="glass-card section-offset p-4 p-lg-5">
+                <div class="section-header-custom mb-4">
+                    <span class="section-subtitle">DISCUSSION & COLLABORATION</span>
+                    <h2 class="h4 fw-black mb-1 text-dark">Kontak & Diskusi Proyek</h2>
+                    <p class="text-muted small mb-0">Kirimkan pesan atau pertanyaan untuk berdiskusi mengenai proyek web.</p>
+                </div>
+
+                <form id="contactForm" class="needs-validation custom-form-ui" novalidate>
+                    <fieldset class="border rounded-4 p-4 mb-4 bg-white shadow-sm">
+                        <legend class="float-none w-auto px-3 fs-6 fw-bold text-primary mb-3">
+                            <i class="bi bi-chat-quote-fill me-1"></i> Formulir Pesan Kolaborasi
+                        </legend>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="text" name="nama" class="form-control" id="contactNama" placeholder="Nama Lengkap" required>
+                                    <label for="contactNama">Nama Lengkap *</label>
+                                    <div class="invalid-feedback">Nama wajib diisi.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating premium-floating">
+                                    <input type="email" name="email" class="form-control" id="contactEmail" placeholder="Email" required>
+                                    <label for="contactEmail">Alamat Email *</label>
+                                    <div class="invalid-feedback">Email valid wajib diisi.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating premium-floating mb-3">
+                            <select name="topik" class="form-select fw-semibold" id="contactTopik" required>
+                                <option value="" selected disabled>Pilih topik diskusi...</option>
+                                <option value="frontend">Frontend Slicing & Development</option>
+                                <option value="uiux">Desain UI/UX Prototyping</option>
+                                <option value="audit">Audit Aksesibilitas Web (WCAG)</option>
+                                <option value="umum">Pertanyaan Umum / Kolaborasi</option>
+                            </select>
+                            <label for="contactTopik">Topik Diskusi *</label>
+                            <div class="invalid-feedback">Silakan pilih topik diskusi.</div>
+                        </div>
+
+                        <div class="form-floating premium-floating">
+                            <textarea name="pesan" class="form-control custom-textarea" placeholder="Pesan" id="contactPesan" style="height: 120px" required></textarea>
+                            <label for="contactPesan">Pesan / Detail Diskusi *</label>
+                            <div class="invalid-feedback">Pesan wajib diisi.</div>
+                        </div>
+                    </fieldset>
+
+                    <button class="btn btn-premium w-100 py-3 fw-bold shadow-sm" type="submit">
+                        Kirim Pesan Diskusi <i class="bi bi-send-fill ms-2"></i>
+                    </button>
                 </form>
             </section>
         </main>
     </div>
 
-    <!-- Footer Semantik -->
-    <footer class="site-footer">
-        <p>&copy; 2026 Portofolio — Disusun oleh <strong>Choqy Pananda Sirait</strong></p>
+    <!-- Universal Dynamic Modal -->
+    <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-modal border-0 shadow-lg">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-black h5" id="projectModalTitle">Judul Proyek</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body py-3" id="projectModalBody"></div>
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-sm btn-outline-dark w-100 py-2 fw-bold" data-bs-dismiss="modal">Tutup Dialog</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        <div id="appToast" class="toast border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <strong id="toastTitle" class="d-block mb-1">Notifikasi</strong>
+                    <span id="toastBody">Pesan umpan balik sistem.</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-white border-top text-muted small">
+        <p class="mb-0">&copy; 2026 Choqy Pananda Sirait</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

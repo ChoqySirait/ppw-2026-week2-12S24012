@@ -1,0 +1,24 @@
+{
+  "name": "Choqy Pananda Sirait",
+  "nim": "12S24012",
+  "prodi": "S1 Sistem Informasi",
+  "institution": "Institut Teknologi Del",
+  "role": "Web Developer & Business Enthusiast",
+  "status": "Available for Project",
+  "bio": "Saya adalah seorang pengembang antarmuka yang memiliki ketertarikan mendalam pada rekayasa perangkat lunak serta eksplorasi strategi bisnis digital. Berfokus pada pembangunan antarmuka modern yang estetik, performant, dan accessible.",
+  "location": "IT Del, Laguboti, Sumatera Utara",
+  "operatingHours": "Senin - Jumat (08.00 - 17.00 WIB)",
+  "socials": {
+    "github": "https://github.com/ChoqySirait",
+    "linkedin": "www.linkedin.com/in/ChoqyPanandaSirait",
+    "email": "choqy@del.ac.id"
+  },
+  "skills": [
+    "HTML5 Semantic",
+    "Modern CSS3 & Bootstrap 5",
+    "JavaScript (ES6+)",
+    "Decoupled Multi-Tier Architecture",
+    "Web Accessibility (WCAG 2.2 AA)",
+    "UI/UX Design (Figma)"
+  ]
+}
