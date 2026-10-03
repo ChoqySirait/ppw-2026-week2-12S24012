@@ -53,6 +53,7 @@ class ApiService {
         };
     }
 
+    // Mencegah XSS
     static sanitizeHTML(str) {
         if (!str) return '';
         const temp = document.createElement('div');

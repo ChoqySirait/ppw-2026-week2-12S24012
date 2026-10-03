@@ -3,7 +3,9 @@
  * @description Presenter Engine untuk Client-Side Rendering (CSR), Event Handling, & UI State Handling
  * @author Choqy Pananda Sirait (12S24012)
  * @course Pemrograman dan Pengujian Web - IT Del
- */
+ * Document Object Model (DOM)
+ * DOM-based Cross-Site Scripting (XSS).
+*/
 class App {
     constructor() {
         this.state = {

@@ -1,11 +1,11 @@
 [
   {
     "id": "proj-01",
-    "title": "Portofolio & Service Portal",
+    "title": "Portofolio",
     "category": "Web Development",
     "date": "2026-02-02",
     "formattedDate": "02 Feb 2026",
-    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60",
+    "thumbnail": "Portfolio-asli.png",
     "description": "Antarmuka portofolio web modern berarsitektur Decoupled CSR dengan integrasi Bootstrap 5.3, Universal Dynamic Modal, dan penyimpanan persisten sisi klien.",
     "technologies": ["HTML5", "CSS3", "Bootstrap 5", "JavaScript ES6+"],
     "status": "Selesai",
