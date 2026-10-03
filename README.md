@@ -98,9 +98,20 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 
 * **Tampilan Desktop**
+<img width="959" height="533" alt="image" src="https://github.com/user-attachments/assets/8d63560e-b652-4a3b-9e34-21bec183cae8" />
+
+<img width="959" height="533" alt="image" src="https://github.com/user-attachments/assets/09dcdc79-94bb-49dc-808b-f73e4f52908b" />
+
+<img width="959" height="532" alt="image" src="https://github.com/user-attachments/assets/8b8fa1e6-d13a-4c52-a108-3d16b07e52c4" />
+
+<img width="959" height="536" alt="image" src="https://github.com/user-attachments/assets/d24454d3-279c-423d-a4d2-e1c12e9489c8" />
+
+<img width="959" height="535" alt="image" src="https://github.com/user-attachments/assets/dd396b04-dfe2-431a-a372-e81ab25f17cb" />
+
 
 
 * **Tampilan Mobile Responsive & Collapsible Profile**
+<img width="165" height="356" alt="image" src="https://github.com/user-attachments/assets/f66d3dfd-5655-485a-b294-f0a6ece151a3" />![Uploading image.png…]()
 
 ---
 
