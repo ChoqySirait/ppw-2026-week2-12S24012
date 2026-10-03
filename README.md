@@ -94,6 +94,7 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 ## 📸 Dokumentasi Antarmuka (Screenshots)
 
 * **Tampilan Git Commit & History**
+<img width="959" height="530" alt="image" src="https://github.com/user-attachments/assets/9a69e305-d8ea-46e7-a4e4-b639358d9f4d" />
 
 
 * **Tampilan Desktop**
