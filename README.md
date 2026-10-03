@@ -49,39 +49,6 @@ Proyek ini merefaktor basis kode Tugas Minggu 03 menjadi sistem berarsitektur **
 
 ---
 
-## 🧩 Diagram Arsitektur Multi-Tier
-
-```text
-+-----------------------------------------------------------------------+
-|                       PRESENTATION / UI TIER                          |
-|  - index.html (Clean Shell Container tanpa konten hardcoded)          |
-|  - style.css (Glassmorphic UI, Grid 3-Kolom, Bubble Glow Effects)     |
-+-----------------------------------------------------------------------+
-                                   ▲
-                                   │  Dynamic DOM Injection & Event Handling
-                                   ▼
-+-----------------------------------------------------------------------+
-|                          PRESENTER ENGINE                             |
-|  - js/app.js (CSR State Manager, Category Filtering, UI States)       |
-+-----------------------------------------------------------------------+
-                                   ▲
-                                   │  Async Fetch API & Sanitized Data
-                                   ▼
-+-----------------------------------------------------------------------+
-|                            SERVICE TIER                               |
-|  - js/api-service.js (Async Data Ingestion & DOM XSS Sanitizer)       |
-+-----------------------------------------------------------------------+
-                                   ▲
-                                   │  HTTP / Local File Ingestion
-                                   ▼
-+-----------------------------------------------------------------------+
-|                             DATA TIER                                 |
-|  - data/profile.json  |  data/projects.json  |  data/services.json    |
-+-----------------------------------------------------------------------+
-```
-
----
-
 ## 🛠️ Fitur Utama & Keunggulan Teknis
 1. Decoupled Multi-Tier & Client-Side Rendering (CSR)
 - Data Tier (data/): Menyimpan data mentah JSON (profile.json, projects.json, services.json).
